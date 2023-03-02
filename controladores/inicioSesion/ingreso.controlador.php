@@ -79,7 +79,7 @@
 
 
 					}
-
+''
 					$queryFuncionario = $conexionEstablecida->prepare("SELECT a.id_usuario AS idFuncionario,a.usuario AS usuarioFuncionario, a.`password` AS contrasenaFun,b.id_rol AS rolFun, a.fisicamenteEstructura FROM th_usuario AS a INNER JOIN th_usuario_roles AS b ON a.id_usuario=b.id_usuario INNER JOIN th_roles AS c ON c.id_rol=b.id_rol WHERE a.usuario=:usuario AND a.`password`=:password  AND a.estadoUsuario='A';");
 					$queryFuncionario->execute(array('usuario'=>htmlentities(trim($_POST["username"]), ENT_QUOTES),'password'=>htmlentities(trim($password2), ENT_QUOTES)));
 
