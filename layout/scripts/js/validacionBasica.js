@@ -1608,4 +1608,21 @@ replicar__poas__anios__anteriores__enviados($("#replicar__honorariosR"),"honorar
 /*=====  End of Replicar información  ======*/
 
 
+var modal__credenciales__nuevos=function(parametro1,parametro2,parametro3,parametro4,parametro5){
+
+	$(parametro1).on('click', function () {
+
+		$(parametro2).show();
+		$(parametro3).hide();
+		$(parametro4).show();
+		$(parametro5).hide();
+
+	});
+
+}
+
+modal__credenciales__nuevos($("#olvido__cedenciales__les"),$(".contenedor__documentosConfidenciales"),$(".bloques__eliminados"),$("#guardarAcuerdoConfidencialidad"),$("#guardarRegistroPoa"));
+modal__credenciales__nuevos($("#registrosNuevos"),$(".bloques__eliminados"),$(".contenedor__documentosConfidenciales"),$("#guardarRegistroPoa"),$("#guardarAcuerdoConfidencialidad"));
+
+
 });
