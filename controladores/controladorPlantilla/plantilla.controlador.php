@@ -119,17 +119,6 @@
 		public function plantillaContenido(){
 
 			if (isset($_GET["ruta"])) {
-
-					
-				if($_GET["ruta"] == "paidRubrosEventos" || $_GET["ruta"] =="paidRubrosInterdisciplinario" || $_GET["ruta"] =="paidRubrosNecesidadesIndividuales" || $_GET["ruta"] =="paidRubrosNecesidadesGenerales" || $_GET["ruta"] =="generalDeporteAR"){
-					require_once self::$vista.self::$contenidoVistas."paid-alto-rendimiento/".$_GET["ruta"].self::$nomenclatura;
-
-				}else{
-					require_once self::$vista.self::$contenidoVistas.$_GET["ruta"].self::$nomenclatura;
-				}	
-        
-
-
 				
 				if($_GET["ruta"]=="generalDeporteEA" || $_GET["ruta"]=="paidRubrosEncuentroActivo"){
 					require_once self::$vista.self::$contenidoVistas."PAID_DESARROLLO/".$_GET["ruta"].self::$nomenclatura;
