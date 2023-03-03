@@ -98,9 +98,7 @@
 
       <!--====  End of Sumando archivo de envíos  ====-->
 
-      <div class="bloques__eliminados" style="width:100!important">
-
-        <div class="row bloques__registros d d-flex flex-column justify-content-start" style="width:100!important">
+      <div class="row bloques__registros d d-flex flex-column justify-content-start bloques__eliminados">
 
         <div class="col col-12 text-center titulos__ModalSeccion">ORGANISMO DEPORTIVO</div>
 
@@ -521,12 +519,8 @@
 
       </div>
 
-      </div>
 
-
-      <div class="bloques__eliminados" style="width:100!important">
-
-        <div class="row bloques__registros margen__registros d d-flex flex-column justify-content-center" style="width:100!important">
+      <div class="row bloques__registros margen__registros d d-flex flex-column justify-content-center bloques__eliminados">
 
 
         <input type="hidden" id="cedulaCiudadano" name="cedulaCiudadano" class="input__registros campos__obligatorios solo__numero" placeholder="Cédula presidente del ORGANISMO">
@@ -655,7 +649,6 @@
 
       </div>
 
-      </div>
 
     </div>
 
