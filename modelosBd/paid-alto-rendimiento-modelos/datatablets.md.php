@@ -35,8 +35,21 @@
 
 		break;
 
+		case "tablaRubros1":
+
+			$query="SELECT REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(a.nombreRubros, 'Ã¡', 'á'),'Ã©','é'),'Ã­','í'),'Ã³','ó'),'Ãº','ú'),'Ã‰','É'),'ÃŒ','Í'),'Ã“','Ó'),'Ãš','Ú'),'Ã±','ñ'),'Ã‘','Ñ'),'&#039;',' ` '),'Ã','Á'),'',' '),'Ã','Á'),'SI','SI'),'â€œ',''),'â€',''),'Á²','ó') AS nombreRubros,a.idRubros,(SELECT a1.nombreComponentes FROM poa_paid_componentes AS a1 WHERE a1.idComponentes=a.idComponente LIMIT 1) AS nombreComponentes,(SELECT a1.nombreIndicadores FROM poa_paid_indicadores AS a1 WHERE a1.idIndicadores=a.idIndicador LIMIT 1) AS nombreIndicador,a.idComponente,a.idIndicador,(SELECT a1.idPaidInversion FROM poa_paid_asignacion AS a1 WHERE a1.idRubros=a.idRubros AND a1.estado='A' ORDER BY a1.idPaidInversion LIMIT 1) AS rubrosComparadores FROM poa_paid_rubros AS a WHERE a.identificador='$datos[1]';";
+
+			$dataTablets=$objeto->getDatatablets2($query);
+
+			echo json_encode($dataTablets);
+
+		break;		
+
 
 
         
     }
+
+
+
 ?>
