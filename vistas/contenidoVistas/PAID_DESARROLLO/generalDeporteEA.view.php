@@ -23,6 +23,7 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 <div class="content-wrapper d d-flex flex-column align-items-center">
 	
 		<?=$componentes->getContenidoActividadesPAID("tablaPAIDGeneral","
+
 		
 		<tr>
 			<th colspan='5' class='uppercase__texto monto__especial__titulo'>
@@ -71,7 +72,7 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 			<center style='font-size: 14px;'>Viajes</center>
 			</td>
 			<td>
-			<center style='font-size: 14px;'><button type'button' class='btn btn-success'style='width=200px;'  data-bs-toggle='modal' data-bs-target='#programaCargado'> Ver </button></center>
+			<center style='font-size: 14px;'><button type'button' class='btn btn-success'style='width=200px;'  data-bs-toggle='modal' data-bs-target='#itemsCargados'> Ver </button></center>
 			</td>
 			<td>
 			<center style='font-size: 14px;'>1000</center>
@@ -92,4 +93,6 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 </div>
 
 
-<?=$componentesPaid->getModalGeneralPaid("programaCargado","Paid General","programaContent","");?>
+<?=$componentesPaid->getModalGeneralPaid("itemsCargados","Rubros","itemContent","agregarItem","verItem","tablaItjem__paid",["Item","Ítem presupuestario"],"contenedorItemTabla");?>
+
+<?=$componentesPaid->getModalEditargetModal("programaEdita","programaForm","Programa",["input__1"],["Programa"],"editarPrograma");?>

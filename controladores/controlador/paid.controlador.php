@@ -24,7 +24,9 @@
 
 					        <div class='col col-1'>
 							
-							<span class='button modales_reload pointerbotones botones_ideales' data-dismiss='modal' aria-label='Close' aria-label='Close'><i class='fas fa-times-circle'></i></span>
+
+							<span class='button modales__reload pointer__botones botones__ideales' data-dismiss='modal' aria-label='Close' aria-label='Close'><i class='fas fa-times-circle'></i></span>
+
 					
 							</div>
 						</div>
@@ -41,13 +43,17 @@
 
 								<a class='btn btn-warning pointer__botones' id='$parametro4' name='$parametro4'><i class='fas fa-user-plus'></i>&nbsp;&nbsp;Agregar</a>
 
-								<input type='hidden' class='elemento_escondidoI' name='elemento_escondidoI'>
+
+								<input type='hidden' class='elemento__escondidoI' name='elemento__escondidoI'>
+
 
 							</div>
 
 							<div class='col col-6 d d-flex justify-content-center'>
 
-								<a class='btn btn-info pointer_botones refrezcar_tabla' id='$parametro5' name='$parametro5'><i class='fas fa-eye'></i>&nbsp;&nbsp;Ver</a>
+
+								<a class='btn btn-info pointer__botones refrezcar__tabla' id='$parametro5' name='$parametro5'><i class='fas fa-eye'></i>&nbsp;&nbsp;Ver</a>
+
 
 							</div>
 
@@ -60,14 +66,18 @@
 								<thead>
 
 									<tr>
-									<th colspan='5' class='uppercase_texto montoespecial_titulo'>
+
+									<th colspan='5' class='uppercase__texto monto__especial__titulo'>
+
 									<center>Componente: Viajes</center>
 									</th>
 									</tr>
 				
 
 									<tr>
-										<th colspan='5' class='uppercase_texto montoespecial_titulo'>
+
+										<th colspan='5' class='uppercase__texto monto__especial__titulo'>
+
 										<center>Monto: ".number_format((float)$inversionOrganismo[0][nombreInversion], 2, '.', '')."</center>
 										</th>
 									</tr>
