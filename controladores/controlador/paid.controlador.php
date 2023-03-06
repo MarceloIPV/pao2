@@ -7,15 +7,11 @@
 
 			$modal= "
 			
-			<div class='modal fade' id='$parametro1' aria-hidden='true'>";
+			<div class='modal fade modal__1' id='$parametro1' aria-hidden='true'  data-backdrop='static' data-keyboard='false' tabindex='-1'>";
 
-			if ($parametro8=="contenedorItemsAc") {
-				$modal.="<div class='modal-dialog modal-xl'>";
-			}else{
-				$modal.="<div class='modal-dialog modal-lg'>";
-			}
+			$modal.="<div class='modal-dialog modal-lg'>";
 
-			
+
 			$modal.="	<form class='modal-content formularioConfiguracion'>
 
 						<div class='modal-header row'>
@@ -26,23 +22,18 @@
 
 					        </div>
 
-					        <div class='col col-1'>";
-
-				if ($parametro1=="actividadesEditaModalAc") {
+					        <div class='col col-1'>
+							
+							<span class='button modales_reload pointerbotones botones_ideales' data-dismiss='modal' aria-label='Close' aria-label='Close'><i class='fas fa-times-circle'></i></span>
 					
-					$modal.="<span class='button pointer__botones' data-dismiss='modal' aria-label='Close' aria-label='Close'><i class='fas fa-times-circle'></i></span>";
+							</div>
+						</div>
+							
+							";
 
-				}else{
-
-					$modal.="<span class='button pointer__botones modales__reload' data-dismiss='modal' aria-label='Close' aria-label='Close'><i class='fas fa-times-circle'></i></span>";
-
-				}
-
+				
 
 				$modal.= "
-					        </div>
-
-						</div>
 
 						<div class='modal-body row $parametro3'>
 
@@ -50,43 +41,100 @@
 
 								<a class='btn btn-warning pointer__botones' id='$parametro4' name='$parametro4'><i class='fas fa-user-plus'></i>&nbsp;&nbsp;Agregar</a>
 
-								<input type='hidden' class='elemento__escondidoI' name='elemento__escondidoI'>
+								<input type='hidden' class='elemento_escondidoI' name='elemento_escondidoI'>
 
 							</div>
 
 							<div class='col col-6 d d-flex justify-content-center'>
 
-								<a class='btn btn-info pointer__botones refrezcar__tabla' id='$parametro5' name='$parametro5'><i class='fas fa-eye'></i>&nbsp;&nbsp;Ver</a>
+								<a class='btn btn-info pointer_botones refrezcar_tabla' id='$parametro5' name='$parametro5'><i class='fas fa-eye'></i>&nbsp;&nbsp;Ver</a>
 
 							</div>
 
 							<div class='$parametro8'>
 
-							<table id='$parametro6' class='col col-12 cell-border mt-4'>
+							<table id='$parametro6'>
+
+							
 
 								<thead>
 
+									<tr>
+									<th colspan='5' class='uppercase_texto montoespecial_titulo'>
+									<center>Componente: Viajes</center>
+									</th>
+									</tr>
+				
+
+									<tr>
+										<th colspan='5' class='uppercase_texto montoespecial_titulo'>
+										<center>Monto: ".number_format((float)$inversionOrganismo[0][nombreInversion], 2, '.', '')."</center>
+										</th>
+									</tr>
+							
+							
+									<tr class='monto__despejarEnvio'>
+										<th colspan='3' class='uppercase__texto'>
+										<center>Monto por asignar: ".number_format((float)$inversionRestante, 2, '.', '')."</center>
+										</th>
+										<th colspan='2' class='uppercase__texto'>
+										<center>Monto asignado: ".number_format((float)$inversionOrganismoQueda[0][sumaItemTotal], 2, '.', '')."</center>
+										</th>
+									</tr>
+									
+									
 									<tr>";
 
 
-								foreach ($parametro7 as $clave => $valor) {
-								
-									$modal.="<th><center>$valor</center></th>";
+									
+				$modal.= "
 
-								}
-
-								if ($parametro1!="actividadesEditaModalAc") {
-									$modal.="<th>Editar</th>";
-								}
-
-								
-
-
-								$modal.="<th>Eliminar</th>";
-
-								$modal.="</tr>
-
+										<th>
+										<center>Nro.</center>
+										</th>
+										<th style='width:25%!important;'>
+										<center>eliminar</center>
+										</th>
+										<th style='width:25%!important;'>
+										<center>editar</center>
+										</th>
+										<th style='width:25%!important;'>
+										<center>Monto Asignado</center>
+										</th>
+										<th style='width:25%!important;'>
+										<center>Monto Por Asignar</center>
+										</th>
+							
+							
+									</tr> 
+			
 								</thead>
+			
+								<tbody >
+								
+									<tr>
+										<td class='uppercase__texto' >
+										<center style='font-size: 14px;'>1</center>
+										</td>
+										<td>
+										<center style='font-size: 14px;'>Viajes</center>
+										</td>
+										<td>
+										<center style='font-size: 14px;'><button type'button' class='btn btn-success'style='width=200px;'  data-bs-toggle='modal' data-bs-target='#programaCargado'> Ver </button></center>
+										</td>
+										<td>
+										<center style='font-size: 14px;'>1000</center>
+										</td>
+										<td>
+										<center style='font-size: 14px;'>200</center>
+										</td>
+
+
+									</tr>
+								
+			
+								</tbody>
+								
 
 							</table>
 

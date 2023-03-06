@@ -71,7 +71,7 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 			<center style='font-size: 14px;'>Viajes</center>
 			</td>
 			<td>
-			<center style='font-size: 14px;'><button type'button' class='btn btn-success'style='width=200px;'  data-bs-toggle='modal' data-bs-target='#programaCargado'> Ver </button></center>
+			<center style='font-size: 14px;'><button type'button' class='btn btn-success'style='width=200px;'  data-bs-toggle='modal' data-bs-target='#itemsCargados'> Ver </button></center>
 			</td>
 			<td>
 			<center style='font-size: 14px;'>1000</center>
@@ -89,4 +89,5 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 </div>
 
 
-<?=$componentesPaid->getModalGeneralPaid("programaCargado","Rubros","indicadoresModalContent","agregarIndicadores","verIndicadores","tablaRubros",["nombreIndicador"],"tablaPrograma");?>
+
+<?=$componentesPaid->getModalGeneralPaid("itemsCargados","Rubros","itemContent","agregarItem","verItem","tablaItjem__paid",["Item","Ítem presupuestario"],"contenedorItemTabla");?>
