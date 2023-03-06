@@ -79,10 +79,7 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 			<td>
 			<center style='font-size: 14px;'>200</center>
 			</td>
-
-
-		</tr>
-	
+		</tr>	
 
 		");
 		
@@ -92,4 +89,4 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 </div>
 
 
-<?=$componentesPaid->getModalGeneralPaid("programaCargado","Paid General","programaContent","");?>
+<?=$componentesPaid->getModalGeneralPaid("programaCargado","Rubros","indicadoresModalContent","agregarIndicadores","verIndicadores","tablaRubros",["nombreIndicador"],"tablaPrograma");?>
