@@ -3,16 +3,16 @@
 	class componentesPaid{
 
 
-		public function getModalGeneralPaid($parametro1,$parametro2,$parametro3,$parametro4){
+		public function getModalGeneralPaid($parametro1,$parametro2,$parametro3,$parametro4,$parametro5,$parametro6,$parametro7,$parametro8){
 
 			$modal= "
 			
 			<div class='modal fade modal__1' id='$parametro1' aria-hidden='true'  data-backdrop='static' data-keyboard='false' tabindex='-1'>";
 
-			
 			$modal.="<div class='modal-dialog modal-lg'>";
-		
-			$modal.="<form class='modal-content'>
+
+
+			$modal.="	<form class='modal-content formularioConfiguracion'>
 
 						<div class='modal-header row'>
 
@@ -24,69 +24,123 @@
 
 					        <div class='col col-1'>
 							
-								<span class='button modales__reload pointer__botones botones__ideales' data-dismiss='modal' aria-label='Close' aria-label='Close'><i class='fas fa-times-circle'></i></span>
+							<span class='button modales__reload pointer__botones botones__ideales' data-dismiss='modal' aria-label='Close' aria-label='Close'><i class='fas fa-times-circle'></i></span>
 					
 							</div>
 						</div>
+							
+							";
+
+				
+
+				$modal.= "
 
 						<div class='modal-body row $parametro3'>
 
-							<table id='$parametro4'>
+							<div class='col col-6 d d-flex justify-content-center'>
 
-							<thead>
+								<a class='btn btn-warning pointer__botones' id='$parametro4' name='$parametro4'><i class='fas fa-user-plus'></i>&nbsp;&nbsp;Agregar</a>
 
-							<tr>
-								<th colspan='5' class='uppercase__texto monto__especial__titulo'>
-								<center>Monto: ".number_format((float)$inversionOrganismo[0][nombreInversion], 2, '.', '')."</center>
-								</th>
-							</tr>
-					
-					
-							<tr class='monto__despejarEnvio'>
-								<th colspan='3' class='uppercase__texto'>
-								<center>Monto por asignar: ".number_format((float)$inversionRestante, 2, '.', '')."</center>
-								</th>
-								<th colspan='2' class='uppercase__texto'>
-								<center>Monto asignado: ".number_format((float)$inversionOrganismoQueda[0][sumaItemTotal], 2, '.', '')."</center>
-								</th>
-							</tr>
+								<input type='hidden' class='elemento__escondidoI' name='elemento__escondidoI'>
+
+							</div>
+
+							<div class='col col-6 d d-flex justify-content-center'>
+
+								<a class='btn btn-info pointer__botones refrezcar__tabla' id='$parametro5' name='$parametro5'><i class='fas fa-eye'></i>&nbsp;&nbsp;Ver</a>
+
+							</div>
+
+							<div class='$parametro8'>
+
+							<table id='$parametro6'>
+
+							
+
+								<thead>
+
+									<tr>
+									<th colspan='5' class='uppercase__texto monto__especial__titulo'>
+									<center>Componente: Viajes</center>
+									</th>
+									</tr>
+				
+
+									<tr>
+										<th colspan='5' class='uppercase__texto monto__especial__titulo'>
+										<center>Monto: ".number_format((float)$inversionOrganismo[0][nombreInversion], 2, '.', '')."</center>
+										</th>
+									</tr>
 							
 							
-							<tr>
-								<th>
-								<center>Nro.</center>
-								</th>
-								<th style='width:25%!important;'>
-								<center>Componente</center>
-								</th>
-								<th style='width:25%!important;'>
-								<center>Rubro</center>
-								</th>
-								<th style='width:25%!important;'>
-								<center>Monto Asignado</center>
-								</th>
-								<th style='width:25%!important;'>
-								<center>Monto Por Asignar</center>
-								</th>
-					
-					
-							</tr> 
-		
-							</thead>
-		
-							<tbody >
+									<tr class='monto__despejarEnvio'>
+										<th colspan='3' class='uppercase__texto'>
+										<center>Monto por asignar: ".number_format((float)$inversionRestante, 2, '.', '')."</center>
+										</th>
+										<th colspan='2' class='uppercase__texto'>
+										<center>Monto asignado: ".number_format((float)$inversionOrganismoQueda[0][sumaItemTotal], 2, '.', '')."</center>
+										</th>
+									</tr>
+									
+									
+									<tr>";
+
+
+									
+				$modal.= "
+
+										<th>
+										<center>Nro.</center>
+										</th>
+										<th style='width:25%!important;'>
+										<center>eliminar</center>
+										</th>
+										<th style='width:25%!important;'>
+										<center>editar</center>
+										</th>
+										<th style='width:25%!important;'>
+										<center>Monto Asignado</center>
+										</th>
+										<th style='width:25%!important;'>
+										<center>Monto Por Asignar</center>
+										</th>
 							
 							
-		
-							</tbody>
-							
+									</tr> 
+			
+								</thead>
+			
+								<tbody >
+								
+									<tr>
+										<td class='uppercase__texto' >
+										<center style='font-size: 14px;'>1</center>
+										</td>
+										<td>
+										<center style='font-size: 14px;'>Viajes</center>
+										</td>
+										<td>
+										<center style='font-size: 14px;'><button type'button' class='btn btn-success'style='width=200px;'  data-bs-toggle='modal' data-bs-target='#programaCargado'> Ver </button></center>
+										</td>
+										<td>
+										<center style='font-size: 14px;'>1000</center>
+										</td>
+										<td>
+										<center style='font-size: 14px;'>200</center>
+										</td>
+
+
+									</tr>
+								
+			
+								</tbody>
+								
 
 							</table>
 
-						
+						  </div>
 
 						</div>
-
 
 					</form>
 
