@@ -2,6 +2,106 @@
 
 	class componentesPaid{
 
+
+		public function getModalGeneralPaid($parametro1,$parametro2,$parametro3,$parametro4){
+
+			$modal= "
+			
+			<div class='modal fade modal__1' id='$parametro1' aria-hidden='true'  data-backdrop='static' data-keyboard='false' tabindex='-1'>";
+
+			
+			$modal.="<div class='modal-dialog modal-lg'>";
+		
+			$modal.="<form class='modal-content'>
+
+						<div class='modal-header row'>
+
+					        <div class='col col-11 text-center'>
+
+					          <h5 class='modal-title titulo__modalItems' id='exampleModalLabel'>$parametro2</h5>
+
+					        </div>
+
+					        <div class='col col-1'>
+							
+								<span class='button modales__reload pointer__botones botones__ideales' data-dismiss='modal' aria-label='Close' aria-label='Close'><i class='fas fa-times-circle'></i></span>
+					
+							</div>
+						</div>
+
+						<div class='modal-body row $parametro3'>
+
+							<table id='$parametro4'>
+
+							<thead>
+
+							<tr>
+								<th colspan='5' class='uppercase__texto monto__especial__titulo'>
+								<center>Monto: ".number_format((float)$inversionOrganismo[0][nombreInversion], 2, '.', '')."</center>
+								</th>
+							</tr>
+					
+					
+							<tr class='monto__despejarEnvio'>
+								<th colspan='3' class='uppercase__texto'>
+								<center>Monto por asignar: ".number_format((float)$inversionRestante, 2, '.', '')."</center>
+								</th>
+								<th colspan='2' class='uppercase__texto'>
+								<center>Monto asignado: ".number_format((float)$inversionOrganismoQueda[0][sumaItemTotal], 2, '.', '')."</center>
+								</th>
+							</tr>
+							
+							
+							<tr>
+								<th>
+								<center>Nro.</center>
+								</th>
+								<th style='width:25%!important;'>
+								<center>Componente</center>
+								</th>
+								<th style='width:25%!important;'>
+								<center>Rubro</center>
+								</th>
+								<th style='width:25%!important;'>
+								<center>Monto Asignado</center>
+								</th>
+								<th style='width:25%!important;'>
+								<center>Monto Por Asignar</center>
+								</th>
+					
+					
+							</tr> 
+		
+							</thead>
+		
+							<tbody >
+							
+							
+		
+							</tbody>
+							
+
+							</table>
+
+						
+
+						</div>
+
+
+					</form>
+
+				</div>
+
+			</div>";
+
+			return $modal;
+
+
+		}
+
+
+
+
 		public function getModalConfiguracion($parametro1,$parametro2,$parametro3,$parametro4,$parametro5,$parametro6,$parametro7,$parametro8){
 
 			$modal= "
