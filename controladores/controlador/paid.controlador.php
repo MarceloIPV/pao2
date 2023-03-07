@@ -18,7 +18,7 @@
 
 					        <div class='col' style='z-index: 1;'>
 
-					        	<h5 class='modal-title titulo__modalItems' id='exampleModalLabel'>$parametro2</h5>
+					        	<h5 class='modal-title titulo__modalItems' id='exampleModalLabel'>$parametro2: Viajes</h5>
 
 					        </div>
 
@@ -42,7 +42,6 @@
 
 								<a class='btn btn-warning pointer__botones' id='$parametro4' name='$parametro4'><i class='fas fa-th-list'></i>&nbsp;&nbsp;Agregar</a>
 
-
 								<input type='hidden' class='elemento__escondidoI' name='elemento__escondidoI'>
 
 
@@ -58,32 +57,20 @@
 
 							<div class='$parametro8 overflow_c eliminar__en__etapas__b'>
 
-							<table id='$parametro6'>
+							<table id='$parametro6' class='cell-border' >
 
 							
 
 								<thead>
 
-									<tr>
-
-									<th colspan='18' class='uppercase__texto monto__especial__titulo'>
-
-									<center>Rubro: Viajes</center>
-									</th>
-									</tr>
-									
-									<tr>
-										<th colspan='18' class='uppercase__texto monto__especial__titulo'>
+									<tr class='monto__despejarEnvio' style='border: 1px solid white;'>
+										<th colspan='5' class='uppercase__texto monto__especial__titulo'>
 										<center>Monto: ".number_format((float)$inversionOrganismo[0][nombreInversion], 2, '.', '')."</center>
 										</th>
-									</tr>
-							
-							
-									<tr class='monto__despejarEnvio'>
-										<th colspan='9' class='uppercase__texto'>
+										<th colspan='5' class='uppercase__texto monto__especial__titulo'>
 										<center>Monto por asignar: ".number_format((float)$inversionRestante, 2, '.', '')."</center>
 										</th>
-										<th colspan='9' class='uppercase__texto'>
+										<th colspan='6' class='uppercase__texto monto__especial__titulo'>
 										<center>Monto asignado: ".number_format((float)$inversionOrganismoQueda[0][sumaItemTotal], 2, '.', '')."</center>
 										</th>
 									</tr>
@@ -98,19 +85,11 @@
 										<th>
 										<center>Cod. Item</center>
 										</th>
-										<th style='width:25%!important;'>
+
+										<th style='width:15%!important;'>
 										<center>Item</center>
 										</th>
-										<th style='width:25%!important;'>
-										<center>Justificación de Adquisición</center>
-										</th>
-										<th style='width:25%!important;'>
-										<center>Cantidad a Adquirir</center>
-										</th>
-										<th style='width:25%!important;'>
-										<center> Tipo de Contratación</center>
-										</th>
-
+										
 										<th COLSPAN=1><center>ENE</center></th>
 										<th COLSPAN=1><center>FEB</center></th>
 										<th COLSPAN=1><center>MAR</center></th>	
@@ -125,8 +104,9 @@
 										<th COLSPAN=1><center>DIC</center></th>	
 
 
+										<th COLSPAN=1><center>Total</center></th>	
 
-										<th COLSPAN=1><center>Total Programación Financiera</center></th>	
+										<th COLSPAN=1><center>Guardar</center></th>	
 
 
 									</tr> 
@@ -142,14 +122,90 @@
 										<td>
 										<center style='font-size: 14px;'>Viajes</center>
 										</td>
+										
+
 										<td>
-										<center style='font-size: 14px;'><button type'button' class='btn btn-success'style='width=200px;'  data-bs-toggle='modal' data-bs-target='#programaCargado'> Ver </button></center>
+										<center style='font-size: 14px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										</center>
 										</td>
+
 										<td>
-										<center style='font-size: 14px;'>1000</center>
+										<center style='font-size: 14px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										</center>
 										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										</center>
+										</td>
+
+
 										<td>
 										<center style='font-size: 14px;'>200</center>
+										</td>
+
+
+										
+										<td>
+										<center><button id='guardarMatriz37225'  class='btn btn-primary'><i class='fas fa-save'></i></button>
+										</center>
 										</td>
 
 
