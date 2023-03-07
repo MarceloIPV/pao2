@@ -4487,6 +4487,34 @@
 
 		}
 
+
+		public function getContenidoActividadesPAID($parametro1,$parametro2,$parametro3){
+			
+			return "
+				<table id='$parametro1' class='col col-12 mt-4 cell-border table table-dark table-striped'>
+
+					<thead>
+
+					$parametro2
+
+					</thead>
+
+					<tbody >
+					
+					$parametro3
+
+					</tbody>
+					
+
+				</table>
+			";
+
+
+		}
+
+
+		
+
 		public function getComponentes($parametro1,$parametro2){
 
 			switch ($parametro1) {
