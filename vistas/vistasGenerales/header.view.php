@@ -179,7 +179,7 @@
 		<script type="text/javascript" src="layout/scripts/js/validacionesGenerales.js?v=1.0.39"></script>
 
 		<!-- validación aspectos básicos teléfonos, números, etc -->
-		<script type="text/javascript" src="layout/scripts/js/validacionBasica.js?v=1.0.10"></script>
+		<script type="text/javascript" src="layout/scripts/js/validacionBasica.js?v=1.0.11"></script>
 
 		<!-- selector validaciones -->
 		<script type="text/javascript" src="layout/scripts/js/validacionSelector.js?v=1.0.8"></script>
@@ -194,7 +194,7 @@
 		<script type="text/javascript" src="layout/scripts/js/ajax/datatablet.js?v=1.0.79"></script>
 
 		<!-- validacion global del proyecto -->
-		<script type="text/javascript" src="layout/scripts/js/validaGlobal.js?v=1.1.48"></script>
+		<script type="text/javascript" src="layout/scripts/js/validaGlobal.js?v=1.1.50"></script>
 
 		<!-- matriz construccion -->
 		<script type="text/javascript" src="layout/scripts/js/segmentos.js?v=1.1.28"></script>
@@ -208,7 +208,7 @@
 		<script type="text/javascript" src="layout/scripts/js/seguimiento/seguimientoGlobal.js?v=1.0.25"></script>
 
 		<!-- modificaciones -->
-		<script type="text/javascript" src="layout/scripts/js/modificacion/modificacion.js?v=1.0.12"></script>
+		<script type="text/javascript" src="layout/scripts/js/modificacion/modificacion.js?v=1.0.14"></script>
 
 		<script type="text/javascript" src="layout/scripts/js/disminucion/modificacionDisminucion.js?v=1.0.7"></script>
 		
@@ -230,10 +230,8 @@
 
 		<script type="text/javascript" src="layout/scripts/js/remanentes/remanentes.js?v=1.0.2"></script>
 
-		
 
 		<script type="text/javascript" src="layout/scripts/js/PAID_DESARROLLO_JS/index.js"></script>
-
 
 			
 		<!--====  End of Scripts personalizados  ====-->

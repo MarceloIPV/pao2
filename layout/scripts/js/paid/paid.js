@@ -885,8 +885,6 @@ $.getScript("layout/scripts/js/ajax/datatablet.js",function(){
 	datatablets($("#tablaProgramas"),"tablaProgramas",[$("#idUsuarioPrincipal").val(),$("#valorComparativo").val()],objetos([1,2],["boton","boton"],["<center><button class='editarPrograma estilo__botonDatatablets btn btn-info pointer__botones' data-toggle='modal' data-target='#programaEdita'><i class='fas fa-user-edit'></i></button><center>","<center><button class='eliminarPrograma estilo__botonDatatablets btn btn-danger pointer__botones'><i class='fas fa-trash'></i></button><center>"],[false],[false]),-1,["funcion__editar","funcion__datatabletsEliminar"],["editarPrograma","eliminarPrograma"],["programaEdita","programaElimina"],["edita","elimina"],[1,0],['enviado','input__1']);	
 
 
-	datatablets($("#tablaComponente"),"tablaComponente",[$("#idUsuarioPrincipal").val(),$("#valorComparativo").val()],objetos([1,2],["boton","boton"],["<center><button class='editarComponente estilo__botonDatatablets btn btn-info pointer__botones' data-toggle='modal' data-target='#componenteEdita'><i class='fas fa-user-edit'></i></button><center>","<center><button class='eliminarComponente estilo__botonDatatablets btn btn-danger pointer__botones'><i class='fas fa-trash'></i></button><center>"],[false],[false]),-1,["funcion__editar","funcion__datatabletsEliminar"],["editarComponente","eliminarComponente"],["componenteEdita","componenteElimina"],["edita","elimina"],[1,0],['enviado','input__1']);	
-
 	datatablets($("#tablaItem__paid"),"tablaItem__paid",[$("#idUsuarioPrincipal").val(),$("#valorComparativo").val()],objetos([2,3],["boton","boton"],["<center><button class='editarItems estilo__botonDatatablets btn btn-info pointer__botones' data-toggle='modal' data-target='#itemEdita'><i class='fas fa-user-edit'></i></button><center>","<center><button class='eliminarItem estilo__botonDatatablets btn btn-danger pointer__botones'><i class='fas fa-trash'></i></button><center>"],[false],[false]),-1,["funcion__editar","funcion__datatabletsEliminar"],["editarItems","eliminarItem"],["itemEdita","itemElimina"],["edita","elimina"],[1,0],['enviado','input__1']);	
 
 	datatablets($("#tablaEstrategicos"),"tablaEstrategicos",[$("#idUsuarioPrincipal").val(),$("#valorComparativo").val()],objetos([1,2],["boton","boton"],["<center><button class='editarEstrategicos estilo__botonDatatablets btn btn-info pointer__botones' data-toggle='modal' data-target='#estrategicosEdita'><i class='fas fa-user-edit'></i></button><center>","<center><button class='eliminarEstrategicos estilo__botonDatatablets btn btn-danger pointer__botones'><i class='fas fa-trash'></i></button><center>"],[false],[false]),-1,["funcion__editar","funcion__datatabletsEliminar"],["editarEstrategicos","eliminarEstrategicos"],["estrategicosEdita","estrategicosElimina"],["edita","elimina"],[1,0],['enviado','input__1']);	
@@ -900,7 +898,10 @@ $.getScript("layout/scripts/js/ajax/datatablet.js",function(){
 
 	datatablets($("#tablaIndicadores__paid"),"tablaIndicadores__paid",[$("#idUsuarioPrincipal").val(),$("#valorComparativo").val()],objetos([1,2],["boton","boton"],["<center><button class='editarIndicador estilo__botonDatatablets btn btn-info pointer__botones' data-toggle='modal' data-target='#indicadorEdita'><i class='fas fa-user-edit'></i></button><center>","<center><button class='eliminarIndicador estilo__botonDatatablets btn btn-danger pointer__botones'><i class='fas fa-trash'></i></button><center>"],[false],[false]),-1,["funcion__editar","funcion__datatabletsEliminar"],["editarIndicador","eliminarIndicador"],["indicadorEdita","indicadorElimina"],["edita","elimina"],[1,0],['enviado','input__1']);	
 
-	datatablets($("#tablaRubros"),"tablaRubros",[$("#idUsuarioPrincipal").val(),$("#valorComparativo").val()],objetos([1,5,6],["boton","boton","boton"],["<center><a class='verItems estilo__botonDatatablets btn btn-warning pointer__botones' data-toggle='modal' data-target='#rubrosEditaModalAc'><i class='fas fa-eye'></i></a><center>","<center><button class='editarRubros estilo__botonDatatablets btn btn-info pointer__botones' data-toggle='modal' data-target='#rubrosEditaModal'><i class='fas fa-user-edit'></i></button><center>","<center><button class='eliminarRubros estilo__botonDatatablets btn btn-danger pointer__botones'><i class='fas fa-trash'></i></button><center>"],[false],[false]),-1,["funcion__verItems__2","funcion__editar","funcion__datatabletsEliminar"],['verItems',"editarRubros","eliminarRubros"],['verItems',"rubrosEditaModal","rubrosElimina"],["edita","edita","elimina"],[1,0],['enviado','input__1']);	
+	datatablets($("#tablaRubros"),"tablaRubros",[$("#idUsuarioPrincipal").val(),$("#valorComparativo").val()],objetos([1,2,3],["boton","boton","boton"],["<center><a class='verItems estilo__botonDatatablets btn btn-warning pointer__botones' data-toggle='modal' data-target='#rubrosEditaModalAc'><i class='fas fa-eye'></i></a><center>","<center><button class='editarRubros estilo__botonDatatablets btn btn-info pointer__botones' data-toggle='modal' data-target='#rubrosEditaModal'><i class='fas fa-user-edit'></i></button><center>","<center><button class='eliminarRubros estilo__botonDatatablets btn btn-danger pointer__botones'><i class='fas fa-trash'></i></button><center>"],[false],[false]),-1,["funcion__verItems__2","funcion__editar","funcion__datatabletsEliminar"],['verItems',"editarRubros","eliminarRubros"],['verItems',"rubrosEditaModal","rubrosElimina"],["edita","edita","elimina"],[1,0],['enviado','input__1']);	
+
+	datatablets($("#tablaComponente"),"tablaComponente",[$("#idUsuarioPrincipal").val(),$("#valorComparativo").val()],objetos([1,3,4],["boton","boton","boton"],["<center><a class='verRubrosC estilo__botonDatatablets btn btn-warning pointer__botones' data-toggle='modal' data-target='#rubrosEditaModalComponentes'><i class='fas fa-eye'></i></a><center>","<center><a class='editarComponente estilo__botonDatatablets btn btn-info pointer__botones' data-toggle='modal' data-target='#componenteEdita'><i class='fas fa-user-edit'></i></a><center>","<center><a class='eliminarComponente estilo__botonDatatablets btn btn-danger pointer__botones'><i class='fas fa-trash'></i></a><center>"],[false],[false]),-1,["funcion__verComponentes__156","funcion__editar__986","funcion__datatabletsEliminar___849"],["verRubrosC","editarComponente","eliminarComponente"],["verRubrosC","componenteEditad","componenteElimina"],["edita","elimina"],[1,0],['enviado','input__1']);
+
 
 	datatablets($("#tabladeporte__paid"),"tabladeporte__paid",[$("#idUsuarioPrincipal").val(),$("#valorComparativo").val()],objetos([1,2],["boton","boton"],["<center><button class='editarDeportePaid estilo__botonDatatablets btn btn-info pointer__botones' data-toggle='modal' data-target='#deportePaidEdita'><i class='fas fa-user-edit'></i></button><center>","<center><button class='eliminarDeportePaid estilo__botonDatatablets btn btn-danger pointer__botones'><i class='fas fa-trash'></i></button><center>"],[false],[false]),-1,["funcion__editar","funcion__datatabletsEliminar"],["editarDeportePaid","eliminarDeportePaid"],["deportePaidEdita","deportePaidElimina"],["edita","elimina"],[1,0],['enviado','input__1']);	
 
@@ -1048,6 +1049,20 @@ function concatenarValores__attr(parametro1){
 }
 
 
+function concatenarValores__attr__dos__componentes(parametro1){
+	
+	var array = new Array(); 
+
+    $(parametro1).each(function(index) {
+
+        array.push($(this).attr('attrcomponentes'));
+
+    });
+
+    return array;
+
+}
+
 
 var enviar__asignacion__paid=function(parametro1,parametro2){
 
@@ -1065,6 +1080,7 @@ var enviar__asignacion__paid=function(parametro1,parametro2){
 
 		let arrayAgrupados=concatenarValores($(".agrupados__valores__totales"));
 		let arrayAgrupados__attr=concatenarValores__attr($(".agrupados__valores__totales"));
+		let arrayAgrupados__attr__componentes=concatenarValores__attr__dos__componentes($(".agrupados__valores__totales"));
 
 
 		var paqueteDeDatos = new FormData();
@@ -1079,6 +1095,7 @@ var enviar__asignacion__paid=function(parametro1,parametro2){
 
 		paqueteDeDatos.append("arrayAgrupados",JSON.stringify(arrayAgrupados));
 		paqueteDeDatos.append("arrayAgrupados__attr",JSON.stringify(arrayAgrupados__attr));
+		paqueteDeDatos.append("arrayAgrupados__attr__componentes",JSON.stringify(arrayAgrupados__attr__componentes));
 
 		paqueteDeDatos.append("idOrganismo",idOrganismo);
 		paqueteDeDatos.append("valorComparativo",valorComparativo);

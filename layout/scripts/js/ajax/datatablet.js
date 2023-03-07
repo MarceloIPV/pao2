@@ -2674,9 +2674,17 @@ var datatablets=function(parametro1,parametro2,parametro3,parametro4,parametro5,
 
        }
 
+
+
        if (parametro6[i]=="funcion__verItems__2") {
 
             funcion__verItemsObtener__2("#"+parametro2+" tbody",table,parametro7);
+
+       }
+
+       if (parametro6[i]=="funcion__verComponentes__156") {
+
+            funcion__verComponentes__156("#"+parametro2+" tbody",table,parametro7);
 
        }
 
@@ -2740,6 +2748,24 @@ var datatablets=function(parametro1,parametro2,parametro3,parametro4,parametro5,
        }
 
 
+       if (parametro6[i]=="funcion__datatabletsEliminar__paid__componentes__s") {
+
+         funcion__datatabletsEliminar__paid__componentes__s("#"+parametro2+" tbody",table,parametro7,parametro8,parametro9);
+
+       }
+
+
+       if (parametro6[i]=="funcion__datatabletsEliminar___849") {
+
+         funcion__datatabletsEliminar___849("#"+parametro2+" tbody",table,parametro7,parametro8,parametro9);
+
+       }
+
+
+
+        if (parametro6[i]=="funcion__editar__986") {
+            funcion__editar__986("#"+parametro2+" tbody",table,parametro7[i],parametro8[i],parametro9[i],parametro10,parametro11);
+        }
 
        if (parametro6[i]=="funcionEditarOrgaM") {
 
@@ -9523,6 +9549,198 @@ var funcion__datatabletsAsignarInfor=function(tbody,table,parametro3,parametro4,
 
 }
 
+var funcion__verComponentes__156=function(tbody,table,parametro3){
+
+  $(tbody).on("click","a.verRubrosC",function(e){
+
+    e.preventDefault();
+
+    var data=table.row($(this).parents("tr")).data();
+
+    $("#tablaItemsRubrosContentPrincipal").dataTable().fnDestroy();
+
+    $(".titulo__modalItems").text("RUBROS DEL COMPONENTE "+data[0]);
+
+
+    $(".elemento__escondidoI").val(data[2]);
+
+    $("#idUsados__items").val(data[1]);
+
+
+    datatablets($("#tablaItemsRubrosContentPrincipal"),"tablaItemsRubrosContentPrincipal",[$("#idUsados__items").val(),$("#valorComparativo").val()],objetos([1],["boton"],["<button class='eliminarItemAc estilo__botonDatatablets btn btn-danger pointer__botones'><i class='fas fa-trash'></i></button><center>"],[false],[false]),-1,["funcion__datatabletsEliminar__paid__componentes__s"],["eliminarItemAc"],["itemAcEliminaRubros"],["elimina"],[1,0],['enviado','input__1']);
+
+    $(".botones__ideales").removeClass("modales__reload");
+
+
+     var nuevoNavs=function(parametro1){
+
+        $(parametro1).click(function(e){
+
+            $("#componentesCargado").attr('style','padding-right: 17px; display: block;');
+            $("#rubrosEditaModalComponentes").removeAttr('style');
+
+        });
+
+    }
+
+    nuevoNavs($(".botones__ideales"));
+
+    $(".modal").attr('style','left: 0;z-index: 1050;width: 103%;height: 1200px; overflow-x: hidden; overflow-y: auto;');
+
+    
+  
+  });
+
+}
+
+var funcion__datatabletsEliminar__paid__componentes__s=function(tbody,table,parametro3){
+
+  $(tbody).on("click","button."+parametro3,function(e){
+
+    e.preventDefault();
+
+    var boton=$(this);
+
+    $(boton).hide();
+
+    var data=table.row($(this).parents("tr")).data();
+
+
+     let idEnviado=data[1];
+
+
+    var confirm= alertify.confirm('¿Está seguro de eliminar?','¿Está seguro de eliminar?',null,null).set('labels', {ok:'Confirmar', cancel:'Cancelar'});   
+
+    confirm.set({transition:'slide'});    
+
+    confirm.set('onok', function(){ //callbak al pulsar botón positivo
+
+        var paqueteDeDatos = new FormData();
+
+        paqueteDeDatos.append('tipo','eliminar__componente__rubros__s');
+        paqueteDeDatos.append('idEnviado',idEnviado);
+
+        $.ajax({
+
+            type:"POST",
+            url:"modelosBd/inserta/eliminaAcciones.md.php",
+            contentType: false,
+            data:paqueteDeDatos,
+            processData: false,
+            cache: false, 
+            success:function(response){
+
+                var elementos=JSON.parse(response);
+
+                var mensaje=elementos['mensaje'];
+
+                if(mensaje==1){
+
+                    alertify.set("notifier","position", "top-center");
+                    alertify.notify("Registro eliminado", "success", 4, function(){});
+
+                    table.ajax.reload();
+
+                }
+
+            },
+            error:function(){
+
+            }
+                
+        });         
+
+    });
+
+    confirm.set('oncancel', function(){ 
+
+        alertify.set("notifier","position", "top-center");
+        alertify.notify("Acción cancelada", "error", 1, function(){
+
+            $(boton).show();
+
+        }); 
+
+    });   
+
+
+  });
+
+}
+
+
+var funcion__datatabletsEliminar___849=function(tbody,table,parametro3){
+
+  $(tbody).on("click","a.eliminarComponente",function(e){
+
+    e.preventDefault();
+
+    var data=table.row($(this).parents("tr")).data();
+
+
+     let idEnviado=data[1];
+
+
+    var confirm= alertify.confirm('¿Está seguro de eliminar?','¿Está seguro de eliminar?',null,null).set('labels', {ok:'Confirmar', cancel:'Cancelar'});   
+
+    confirm.set({transition:'slide'});    
+
+    confirm.set('onok', function(){ //callbak al pulsar botón positivo
+
+        var paqueteDeDatos = new FormData();
+
+        paqueteDeDatos.append('tipo','eliminar__componente__rubros__principales__s');
+        paqueteDeDatos.append('idEnviado',idEnviado);
+
+        $.ajax({
+
+            type:"POST",
+            url:"modelosBd/inserta/eliminaAcciones.md.php",
+            contentType: false,
+            data:paqueteDeDatos,
+            processData: false,
+            cache: false, 
+            success:function(response){
+
+                var elementos=JSON.parse(response);
+
+                var mensaje=elementos['mensaje'];
+
+                if(mensaje==1){
+
+                    alertify.set("notifier","position", "top-center");
+                    alertify.notify("Registro eliminado", "success", 4, function(){});
+
+                    table.ajax.reload();
+
+                }
+
+            },
+            error:function(){
+
+            }
+                
+        });         
+
+    });
+
+    confirm.set('oncancel', function(){ 
+
+        alertify.set("notifier","position", "top-center");
+        alertify.notify("Acción cancelada", "error", 1, function(){
+
+            $(boton).show();
+
+        }); 
+
+    });   
+    console.log(data);
+
+  });
+
+}
+
+
 var funcion__verItemsObtener__2=function(tbody,table,parametro3){
 
   $(tbody).on("click","a.verItems",function(e){
@@ -9531,7 +9749,7 @@ var funcion__verItemsObtener__2=function(tbody,table,parametro3){
 
   	var data=table.row($(this).parents("tr")).data();
 
-  	//$("#tablaItemsRubros").dataTable().fnDestroy();
+  	$("#tablaItemsRubros").dataTable().fnDestroy();
 
   	$(".titulo__modalItems").text("ITEMS DEL RUBRO "+data[0]);
 
@@ -14967,11 +15185,15 @@ var funcion__enCordi__3=function(tbody,table,parametro3,parametro4,parametro5){
 
                 let idOrganismo=data[5];
 
+                let coordinador__enlaces__enviadores=$("#coordinador__enlaces__enviadores").val();
+
                 paqueteDeDatos.append('idOrganismo',idOrganismo);
 
                 paqueteDeDatos.append('idUsuarioPrincipal',idUsuarioPrincipal);
 
                 paqueteDeDatos.append('condicionante',condicionante);
+
+                paqueteDeDatos.append('coordinador__enlaces__enviadores',coordinador__enlaces__enviadores);
 
                 if (condicionante==0) {
 
@@ -20162,6 +20384,153 @@ var funcion__verItemsObtener=function(tbody,table,parametro3){
 
 }
 
+var funcion__editar__986=function(tbody,table){
+
+ $(tbody).on("click","a.editarComponente",function(e){
+
+    e.preventDefault();
+
+    var data=table.row($(this).parents("tr")).data();
+
+    var nuevoNavs=function(parametro1){
+
+        $(parametro1).click(function(e){
+
+            $("#componentesCargado").attr('style','padding-right: 17px; display: block;');
+            $("#componenteEdita").removeAttr('style');
+
+        });
+
+    }
+
+    nuevoNavs($(".botones__ideales"));
+
+    $(".modal").attr('style','left: 0;z-index: 1050;width: 103%;height: 1200px; overflow-x: hidden; overflow-y: auto;');
+
+    console.log(data);
+
+    $(".input__1").val(data[0]);
+
+
+    var indicadores=function(parametro1){
+
+        indicador=103;
+        let idUsados__items= $("#valorComparativo").val();
+
+        $.ajax({
+
+          data: {indicador:indicador,evaluador:idUsados__items},
+          dataType: 'html',
+          type:'POST',
+          url:'modelosBd/validaciones/selector.modelo.php'
+
+        }).done(function(listar__lugar){
+
+          $(parametro1).html(listar__lugar);
+          $(parametro1).val(data[4]);
+
+        }).fail(function(){
+
+          
+
+        });
+
+
+    }
+
+    indicadores($(".input__2__tipoPaid"));
+
+    /*================================
+    =            Insertar            =
+    ================================*/
+    
+    var insertaValidaciones=function(parametro1,parametro2,parametro3,parametro4,parametro5,parametro6,parametro7,parametro8,parametro9,parametro10,parametro11){
+
+    $(parametro1).click(function (e){
+
+        e.preventDefault(); 
+
+        $(".boton__enlacesOcultos").hide();
+
+        $('.reload__Enviosrealizados').html('<img src="images/reloadGit.webp" style="width:50px; height:50px; border-radius:1em;">');
+
+        var confirm= alertify.confirm('¿Está seguro de '+parametro2+'?','¿Está seguro de '+parametro2+'?',null,null).set('labels', {ok:'Confirmar', cancel:'Cancelar'});   
+
+        confirm.set({transition:'slide'});    
+
+        confirm.set('onok', function(){ //callbak al pulsar botón positivo
+                  
+            var paqueteDeDatos = new FormData();
+
+            paqueteDeDatos.append('tipo',parametro4);       
+
+            var other_data = $('#componenteForm').serializeArray();
+
+            var array = new Array(); 
+
+            $.each(other_data,function(key,input){
+                paqueteDeDatos.append(input.name,input.value);
+                array.push(input.value);
+            });
+
+            paqueteDeDatos.append("idComponente",data[1]);
+
+            $.ajax({
+
+                type:"POST",
+                url:"modelosBd/inserta/insertaAcciones.md.php",
+                contentType: false,
+                data:paqueteDeDatos,
+                processData: false,
+                cache: false, 
+                success:function(response){
+
+                    var elementos=JSON.parse(response);
+
+                    var mensaje=elementos['mensaje'];
+
+                    alertify.set("notifier","position", "top-center");
+                    alertify.notify("Registro realizado correctamente", "success", 5, function(){});
+
+                    if(mensaje==1){
+
+                        table.ajax.reload();
+
+                    }
+
+                },
+                error:function(){
+
+                }
+                    
+            }); 
+
+        });
+
+        confirm.set('oncancel', function(){ //callbak al pulsar botón negativo
+
+            alertify.set("notifier","position", "top-center");
+            alertify.notify("Acción cancelada", "error", 1, function(){
+
+                $(".boton__enlacesOcultos").show();
+                $('.reload__Enviosrealizados').html(' ');
+
+            }); 
+
+        }); 
+
+    });
+
+    }   
+
+    insertaValidaciones($("#editarComponentes"),"de la información ingresada","confirm","componenteActualiza__paid",null,null,null,"componenteForm");
+
+
+  /*=====  End of Insertar  ======*/
+  
+});
+
+}
 
 var funcion__datatabletsEditar=function(tbody,table,parametro3,parametro4,parametro5,parametro10,parametro11){
 

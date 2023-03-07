@@ -594,7 +594,36 @@ $(parametro1).click(function(e){
 
 		generador++;
 
-		if (parametro3[i]=="input") {
+		if (parametro3[i]=="select__rubros__multiples") {
+
+			contenedor+="<div class='col col-12 row fila__agregado"+contadorGeneral+"'><select id='agregado"+generador+"' name='agregado"+generador+"[]' class='col col-10 ancho__total__input mt-2 obligatorios__campos"+contadorGeneral+" agregado"+generador+" cambiarSelectIt"+generador+"' multiple='multiple' style='height:80px!important;font-size:10px!important;'></select></div>";
+
+			$('#agregado'+generador).multiSelect()
+
+			var selectLineaPolitica=function(parametro1,parametro2){
+
+				indicador=parametro2;
+
+				let valorComparativo=$("#valorComparativo").val();
+
+				$.ajax({
+
+					data: {indicador:1006,evaluador:valorComparativo},
+				  	dataType: 'html',
+				  	type:'POST',
+					url:'modelosBd/validaciones/selector.modelo.php'
+
+				}).done(function(listar__lugar){
+
+					$("#agregado"+parametro1).html(listar__lugar);
+
+				}).fail(function(){});
+
+			}
+
+			selectLineaPolitica(generador,parametro4[i]);	
+
+		}else if (parametro3[i]=="input") {
 
 			contenedor+="<div class='col col-"+parametro5+" row fila__agregado"+contadorGeneral+"'><input id='agregado"+generador+"' name='agregado"+generador+"' placeholder='"+parametro4[i]+"' class='col col-10 ancho__total__input mt-2 obligatorios__campos"+contadorGeneral+"' /></div>";
 
@@ -612,7 +641,7 @@ $(parametro1).click(function(e){
 
 			switch (parametro6) {
 
-			  case "rubrosPaid":
+			  case "componentesPaid":
 			  
 				var selectLineaPolitica=function(parametro1,parametro2){
 
@@ -665,6 +694,34 @@ $(parametro1).click(function(e){
 				selectLineaPolitica(generador,parametro4[i]);	
 
 			  break;	 
+
+			  case "componentesRubrosPaid":
+			  
+				var selectLineaPolitica=function(parametro1,parametro2){
+
+					indicador=parametro2;
+
+					let idUsados__items= $("#valorComparativo").val();
+
+					$.ajax({
+
+					  data: {indicador:1007,evaluador:idUsados__items},
+				      dataType: 'html',
+				      type:'POST',
+					  url:'modelosBd/validaciones/selector.modelo.php'
+
+					}).done(function(listar__lugar){
+
+					  $("#agregado"+parametro1).html(listar__lugar);
+
+					}).fail(function(){});
+
+				}
+
+				selectLineaPolitica(generador,parametro4[i]);	
+
+			  break;	
+
 
 			  case "tipoOrganiPaid":
 			  
@@ -1211,7 +1268,11 @@ $(parametro1).click(function(e){
 
 	  break; 
 
+	  case "componentesRubrosPaid":
+	  
+	  	guardarElementos($("#guardarGeneral"+contadorGeneral),$("#formAgregado"+contadorGeneral),$(".reloadG__"+contadorGeneral),"componentesRubrosPaid",contadorGeneral,false,$("#valorComparativo").val());
 
+	  break; 
 
 	}
 	
@@ -1260,8 +1321,6 @@ segmentosJs($("#agregarItems"),$(".itemsContent"),["input","input"],["Ingrese el
 
 segmentosJs($("#agregarProgramas"),$(".programaContent"),["input"],["Ingrese programa"],10,"programaPaid");
 
-segmentosJs($("#agregarComponente"),$(".componenteContent"),["input"],["Ingrese Componentes"],10,"componentesPaid");
-
 segmentosJs($("#agregarItem"),$(".itemContent"),["input","input"],["Ingrese nombre del Ítem","Ingrese código del Ítem"],5,"itemPaid");
 
 segmentosJs($("#agregarEstrategicos"),$(".estrategicosContent"),["input"],["Ingrese Objetivo Estratégico"],10,"estrategicoPaid");
@@ -1274,7 +1333,13 @@ segmentosJs($("#agregarTipoOrganizacion"),$(".tipoOrganizacionContent"),["input"
 
 segmentosJs($("#agregarIndicadores"),$(".indicadoresContent"),["input"],["Ingrese indicador"],10,"indicadorPaid");
 
-segmentosJs($("#agregarRubros"),$(".rubrosContent"),["input","select","select","cheboxMultiple__2"],["Ingrese Rubro",102,103,"multiple"],4,"rubrosPaid");
+// segmentosJs($("#agregarRubros"),$(".rubrosContent"),["input","select","select","cheboxMultiple__2"],["Ingrese Rubro",102,103,"multiple"],4,"rubrosPaid");
+
+segmentosJs($("#agregarRubros"),$(".rubrosContent"),["input","cheboxMultiple__2"],["Ingrese nombre del rubro","multiple"],12,"rubrosPaid");
+
+segmentosJs($("#agregarRubros__ec"),$(".rubrosContent"),["input","cheboxMultiple__3"],["Ingrese nombre del rubro","multiple"],12,"rubrosPaid");
+
+segmentosJs($("#agregarComponente"),$(".componenteContent"),["input","select","select__rubros__multiples"],["Ingrese Componentes",103,1006],5,"componentesPaid");
 
 segmentosJs($("#agregardeporte"),$(".deporteContent"),["input"],["Ingrese deporte"],10,"deportePaid");
 
@@ -1285,6 +1350,8 @@ segmentosJs($("#agregarPrueba"),$(".pruebaContent"),["input"],["Ingrese prueba"]
 segmentosJs($("#agregarCategoria"),$(".categoriaContent"),["input"],["Ingrese categoría"],10,"categoriaPaid");
 
 segmentosJs($("#agregarItemsRubros"),$(".itemsRubrosContent"),["select"],[106],10,"itemRubrosPaid");
+
+segmentosJs($("#agregarItemsRubrosContentPrincipal"),$(".rubrosContentPrincipal"),["select"],[1006],10,"componentesRubrosPaid");
 
 /*=====  End of Creando segmentos  ======*/
 

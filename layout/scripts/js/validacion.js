@@ -372,6 +372,10 @@ ocultarVariables($("#verCategoria"),$(".conjunto__validas"),$(".contenedorCatego
 ocultarVariables($("#agregarItemsRubros"),$(".contenedorItemsTabla"),$(".conjunto__validas"));
 ocultarVariables($("#verItemsRubros"),$(".conjunto__validas"),$(".contenedorItemsTabla"));
 
+ocultarVariables($("#agregarItemsRubrosContentPrincipal"),$(".contenedorRubosItemsPrincipalTabla"),$(".conjunto__validas"));
+ocultarVariables($("#verItemsRubrosContentPrincipal"),$(".conjunto__validas"),$(".contenedorRubosItemsPrincipalTabla"));
+
+
 /*=====  End of Ocultando variables  ======*/
 
 /*=============================================
