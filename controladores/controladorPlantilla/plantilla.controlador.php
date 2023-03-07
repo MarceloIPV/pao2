@@ -124,6 +124,8 @@
 					require_once self::$vista.self::$contenidoVistas."PAID_DESARROLLO/".$_GET["ruta"].self::$nomenclatura;
 				}else if($_GET["ruta"]=="generalDeporteAR" || $_GET["ruta"]=="paidRubrosEventos" || $_GET["ruta"]=="paidRubrosInterdisciplinario" || $_GET["ruta"]=="paidRubrosNecesidadesGenerales" || $_GET["ruta"]=="paidRubrosNecesidadesIndividuales"){
 					require_once self::$vista.self::$contenidoVistas."paid-alto-rendimiento/".$_GET["ruta"].self::$nomenclatura;
+				}else if($_GET["ruta"]=="paidencuentroactivo" || $_GET["ruta"]=="paidAsignacion" || $_GET["ruta"]=="paidAsignacionDesarrollo" || $_GET["ruta"]=="paidfortalecimiento" || $_GET["ruta"]=="reporteriaAsignacion" || $_GET["ruta"]=="reporteriaAsignacionDesarrollo"){
+					require_once self::$vista.self::$contenidoVistas."PAID-ADMINISTRACION/".$_GET["ruta"].self::$nomenclatura;
 				}
 				else{
 					require_once self::$vista.self::$contenidoVistas.$_GET["ruta"].self::$nomenclatura;

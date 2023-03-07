@@ -645,6 +645,9 @@
 
 		public function getModalAsignacion__paid($parametro1,$parametro2,$parametro3,$parametro4){
 
+			$objeto= new usuarioAcciones();
+			$array = array();
+
 			$modal="
 
 				<div class='modal fade' id='$parametro1' aria-hidden='true'  data-backdrop='static' data-keyboard='false' tabindex='-1'>
@@ -653,7 +656,7 @@
 
 						<form id='$parametro2' class='modal-content' >
 
-						  <input type='hidden' class='tipoPdf' id='tipoPdf' name='tipoPdf' value='asignacion__paid__presupuestarias'/>
+						  <input type='hidden' class='tipoPdf' id='tipoPdf' name='tipoPdf' value='asignacion_paid_presupuestarias'/>
 
 						  <input type='hidden' class='idOrganismo' id='idOrganismo' name='idOrganismo'/>
 
@@ -663,13 +666,13 @@
 
 					        <div class='col col-11 text-center'>
 
-					          <h5 class='modal-title titulo__asignacion__paid'></h5>
+					          <h5 class='modal-title titulo_asignacion_paid'></h5>
 
 					        </div>
 
 					        <div class='col col-1'>
 
-					        <span class='button pointer__botones botones__ideales modales__reload' data-dismiss='modal' aria-label='Close' aria-label='Close'><i class='fas fa-times-circle'></i></span>
+					        <span class='button pointer_botones botonesideales modales_reload' data-dismiss='modal' aria-label='Close' aria-label='Close'><i class='fas fa-times-circle'></i></span>
 
 					        </div>
 
@@ -679,73 +682,105 @@
 
 					      	<table class='col col-12'>
 
-					      		<thead>
-
-					      		<tr>
-
 
 					      	";
 
+					foreach ($parametro3 as $clave =>  $valor) {
 
-				foreach ($parametro3 AS $valor) {
-					
-					$modal.="	
-						     
-						      	<th class='cambio__textos'><center>".$valor."</center></th>
+						$arrayInformacionPaid=$objeto->getObtenerInformacionGeneral("SELECT a.idRubros,b.nombreRubros FROM poa_paid_componentes_rubros AS a INNER JOIN poa_paid_rubros AS b ON a.idRubros=b.idRubros WHERE a.idComponente='".$valor."';");
 
-							 ";
+						foreach ($arrayInformacionPaid as $valor2) {
+							array_push($array, $valor2["idRubros"]);
+						}
 
-				}
+						$contador=count($array);
 
 
-				$modal.="
-							</tr>
+						$modal.="
+
+						<table class='col col-12'>
+
+							<thead>
+
+								<tr>
+
+									<th colspan='$contador'>".strtoupper($parametro4[$clave])."</th>
+
+								</tr>
 
 							</thead>
 
-								<tbody>
+							<tbody>
 
-					      			<tr>";
+								<tr>
+
+							";
 
 
-			foreach ($parametro3 AS $key =>  $valor) {
+							foreach ($arrayInformacionPaid as $valor2) {
+
+								$modal.="
+
+								<th>".strtoupper($valor2["nombreRubros"])."</th>
+
+								";
+
+							}
+
+				$modal.="
+								</tr>";
+
+				$modal.="<tr>";
+
+					foreach ($arrayInformacionPaid as $valor3) {
+
+						$modal.="
+
+						<td>
+							<input type='text' id='rubro".$valor3["idRubros"]."' name='rubro".$valor3["idRubros"]."' attr='".$valor3["idRubros"]."' attrcomponentes='".$valor."' class='agrupados_valorestotales anchototalinput cambiodenumerof solonumeromontos enlacessumas sujetos_totales' value='0'/>
+						</td>
+
+						";
+
+					}
+
+				$modal.="</tr>";
+
+
+				$modal.=	"</tbody>
+
+
+						</table>";
+
+					}
 					
-				$modal.="	
-					<td>
-						 <input type='text' id='".$valor."' name='".$valor."' attr='".$parametro4[$key]."' class='agrupados__valores__totales ancho__total__input cambio__de__numero__f solo__numero__montos enlaces__sumas sujetos__totales' value='0'/>
-						
-					</td>";
 
-			}
+				$modal.="		
 
-
-			$modal.="
-					      			</tr>
-
-					      		</tbody>
+						<table>
 
 					      		<tfoot>
 
 						      		<tr>
 
-						      			<th colspan='2'>
-						      				Techo presupuestario
+						      			<th colspan='1'>
+						      				Techo asignado
 						      			</th>
 
 
-						      			<td colspan='2'>
-						      				<input type='text' id='techo__presupuestario' name='techo__presupuestario' class='ancho__total__input' value='0' readonly=''/>
+						      			<td colspan='1'>
+						      				<input type='text' id='techo_presupuestario' name='techopresupuestario' class='anchototal_input' value='0' readonly=''/>
 						      			</td>	
 
 						      		</tr>
 
 						      		<tr>
 
-						      			<td colspan='2'>
+						      			<td colspan='1'>
 						      				
 						      				 <center>
 
-						      				 	<button id='generarPdf__asignacion__paid' name='generarPdf__asignacion__paid' class='btn btn-info'>
+						      				 	<button id='generarPdf_asignacionpaid' name='generarPdfasignacion_paid' class='btn btn-info'>
 						      				 		<i class='fa fa-download' aria-hidden='true'></i>&nbsp;&nbsp;GENERAR NOTIFICACIÓN
 						      				 	</button>
 
@@ -753,9 +788,9 @@
 
 						      			</td>
 
-						      			<td colspan='2'>
+						      			<td colspan='1'>
 
-						      				 <a class='enlaces__dedicados__paids'>Descargar documento</a>
+						      				 <a class='enlaces_dedicados_paids'>Descargar documento</a>
 
 						      			</td>
 
@@ -768,11 +803,11 @@
 
 						  </div>
 
-						  <div class='modal-footer d d-flex justify-content-center row oculto__elemento__guardar'>
+						  <div class='modal-footer d d-flex justify-content-center row oculto_elemento_guardar'>
 
-							<div class='col col-12 d d-flex justify-content-center flex-wrap oculto__elemento__guardar'>
+							<div class='col col-12 d d-flex justify-content-center flex-wrap oculto_elemento_guardar'>
 
-								<a type='button' class='btn btn-primary oculto__elemento__guardar left__margen' id='guardarAsignacion__paid' name='guardarAsignacion__paid'>NOTIFICAR</a>
+								<a type='button' class='btn btn-primary oculto_elementoguardar leftmargen' id='guardarAsignacionpaid' name='guardarAsignacion_paid'>NOTIFICAR</a>
 
 							</div>
 
@@ -789,7 +824,7 @@
 			return $modal;
 
 		}
-
+		
 		public function modalReenvioPaid($parametro1,$parametro2){
 
 			$componentes= new componentes();
