@@ -1,6 +1,7 @@
 <?php
 
 	class componentesPaid{
+		
 
 		public function getModalIndicadorPaid($parametro1,$parametro2,$parametro3,$parametro4,$parametro5,$parametro6,$parametro7,$parametro8,$parametro9){
 
