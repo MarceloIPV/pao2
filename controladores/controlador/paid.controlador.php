@@ -7,28 +7,27 @@
 
 			$modal= "
 			
-			<div class='modal fade modal__1' id='$parametro1' aria-hidden='true'  data-backdrop='static' data-keyboard='false' tabindex='-1'>";
+			<div class='modal fade modal__1' id='$parametro1' aria-hidden='true' data-backdrop='static' data-keyboard='false' tabindex='-1'>";
 
-			$modal.="<div class='modal-dialog modal-lg'>";
+			$modal.="<div class='modal-dialog modal-xl'>";
 
-
+			
 			$modal.="	<form class='modal-content formularioConfiguracion'>
 
 						<div class='modal-header row'>
 
-					        <div class='col col-11 text-center'>
+					        <div class='col' style='z-index: 1;'>
 
-					          <h5 class='modal-title titulo__modalItems' id='exampleModalLabel'>$parametro2</h5>
+					        	<h5 class='modal-title titulo__modalItems' id='exampleModalLabel'>$parametro2</h5>
 
 					        </div>
 
-					        <div class='col col-1'>
+					        <div class='col col-1' style='z-index: 2;'>
 							
-
-							<span class='button modales__reload pointer__botones botones__ideales' data-dismiss='modal' aria-label='Close' aria-label='Close'><i class='fas fa-times-circle'></i></span>
-
-					
+								<button type='button' class='btn-close modales_reload pointer_botones' data-bs-dismiss='modal' aria-label='Close'><i class='far fa-times-circle'></i></button>
+							
 							</div>
+
 						</div>
 							
 							";
@@ -41,10 +40,10 @@
 
 							<div class='col col-6 d d-flex justify-content-center'>
 
-								<a class='btn btn-warning pointer__botones' id='$parametro4' name='$parametro4'><i class='fas fa-user-plus'></i>&nbsp;&nbsp;Agregar</a>
+								<a class='btn btn-warning pointer__botones' id='$parametro4' name='$parametro4'><i class='fas fa-th-list'></i>&nbsp;&nbsp;Agregar</a>
 
 
-								<input type='hidden' class='elemento__escondidoI' name='elemento__escondidoI'>
+								<input type='hidden' class='elemento_escondidoI' name='elemento_escondidoI'>
 
 
 							</div>
@@ -52,12 +51,12 @@
 							<div class='col col-6 d d-flex justify-content-center'>
 
 
-								<a class='btn btn-info pointer__botones refrezcar__tabla' id='$parametro5' name='$parametro5'><i class='fas fa-eye'></i>&nbsp;&nbsp;Ver</a>
+								<a class='btn btn-info pointer_botones refrezcar_tabla' id='$parametro5' name='$parametro5'><i class='fas fa-eye' style='color: white;'></i>&nbsp;&nbsp;Ver</a>
 
 
 							</div>
 
-							<div class='$parametro8'>
+							<div class='$parametro8 overflow_c eliminar_enetapas_b'>
 
 							<table id='$parametro6'>
 
@@ -67,27 +66,24 @@
 
 									<tr>
 
-									<th colspan='5' class='uppercase__texto monto__especial__titulo'>
+									<th colspan='18' class='uppercase_texto montoespecial_titulo'>
 
-									<center>Componente: Viajes</center>
+									<center>Rubro: Viajes</center>
 									</th>
 									</tr>
-				
-
+									
 									<tr>
-
-										<th colspan='5' class='uppercase__texto monto__especial__titulo'>
-
+										<th colspan='18' class='uppercase_texto montoespecial_titulo'>
 										<center>Monto: ".number_format((float)$inversionOrganismo[0][nombreInversion], 2, '.', '')."</center>
 										</th>
 									</tr>
 							
 							
 									<tr class='monto__despejarEnvio'>
-										<th colspan='3' class='uppercase__texto'>
+										<th colspan='9' class='uppercase__texto'>
 										<center>Monto por asignar: ".number_format((float)$inversionRestante, 2, '.', '')."</center>
 										</th>
-										<th colspan='2' class='uppercase__texto'>
+										<th colspan='9' class='uppercase__texto'>
 										<center>Monto asignado: ".number_format((float)$inversionOrganismoQueda[0][sumaItemTotal], 2, '.', '')."</center>
 										</th>
 									</tr>
@@ -100,22 +96,39 @@
 				$modal.= "
 
 										<th>
-										<center>Nro.</center>
+										<center>Cod. Item</center>
 										</th>
 										<th style='width:25%!important;'>
-										<center>eliminar</center>
+										<center>Item</center>
 										</th>
 										<th style='width:25%!important;'>
-										<center>editar</center>
+										<center>Justificación de Adquisición</center>
 										</th>
 										<th style='width:25%!important;'>
-										<center>Monto Asignado</center>
+										<center>Cantidad a Adquirir</center>
 										</th>
 										<th style='width:25%!important;'>
-										<center>Monto Por Asignar</center>
+										<center> Tipo de Contratación</center>
 										</th>
-							
-							
+
+										<th COLSPAN=1><center>ENE</center></th>
+										<th COLSPAN=1><center>FEB</center></th>
+										<th COLSPAN=1><center>MAR</center></th>	
+										<th COLSPAN=1><center>ABR</center></th>
+										<th COLSPAN=1><center>MAY</center></th>
+										<th COLSPAN=1><center>JUN</center></th>	
+										<th COLSPAN=1><center>JUL</center></th>		
+										<th COLSPAN=1><center>AGO</center></th>	
+										<th COLSPAN=1><center>SEP</center></th>
+										<th COLSPAN=1><center>OCT</center></th>
+										<th COLSPAN=1><center>NOV</center></th>	
+										<th COLSPAN=1><center>DIC</center></th>	
+
+
+
+										<th COLSPAN=1><center>Total Programación Financiera</center></th>	
+
+
 									</tr> 
 			
 								</thead>
