@@ -2,6 +2,200 @@
 
 	class componentesPaid{
 
+		public function getModalIndicadorPaid($parametro1,$parametro2,$parametro3,$parametro4,$parametro5,$parametro6,$parametro7,$parametro8,$parametro9){
+
+			$modal="
+			<div class='modal fade modal__ItemsGrup' id='$parametro1' aria-hidden='true'>
+
+				<div class='modal-dialog modal-lg'>
+
+					<form class='modal-content $parametro2'>
+
+						<div class='modal-header row'>
+
+					        <div class='col' style='z-index: 1;'>
+
+					          <h5 class='modal-title' id='modalTitulo'>$parametro3<br><span class='asignado__titulos'></span></h5>
+
+					        </div>
+
+					        <div class='col col-1' style='z-index: 2;'>
+
+							<button type='button' class='btn-close modales_reload pointer_botones' data-bs-dismiss='modal' aria-label='Close'><i class='far fa-times-circle'></i></button>
+
+					        </div>
+
+						</div>
+
+						<div class='modal-body row'>
+
+							<input type='hidden' class='idOrganismo' name='idOrganismo'/>
+
+							<input type='hidden' class='idAtributoEscondido' name='idAtributoEscondido'/>
+
+						";
+
+
+			foreach ($parametro5 as $clave => $valor) {
+
+				if ($parametro7[$clave]=="input") {
+
+					if ($parametro8[$clave]=="disabled") {
+
+						$modal.="
+
+						<div class='col col-4 titulo__enfasis mt-2'>
+							$parametro5[$clave]
+						</div>
+
+
+						<div class='col col-8 mt-2'>
+							<input type='text' class='$parametro6[$clave] ancho__total__input solo__numero campos__obligatorios text-center' name='$parametro6[$clave]' readonly='readonly' value='0'/>
+						</div>
+
+						";
+
+					
+					}else if ($parametro8[$clave]=="numero") {
+
+						$modal.="
+
+						<div class='col col-4 titulo__enfasis mt-2'>
+							$parametro5[$clave]
+						</div>
+
+
+						<div class='col col-8 mt-2'>
+							<input type='text' class='$parametro6[$clave] ancho__total__input solo__numero campos__obligatorios text-center' name='$parametro6[$clave]' value='0'/>
+						</div>
+
+						";
+
+					}else if($parametro8[$clave]=="monto"){
+
+
+						$modal.="
+
+						<div class='col col-4 titulo__enfasis mt-2'>
+							$parametro5[$clave]
+						</div>
+
+
+						<div class='col col-8 mt-2'>
+							<input type='text' class='$parametro6[$clave] ancho__total__input solo__numero__montos campos__obligatorios text-center' name='$parametro6[$clave]' value='0.00'/>
+						</div>
+
+						";						
+						
+					}else{
+
+						$modal.="
+
+						<div class='col col-4 titulo__enfasis mt-2'>
+							$parametro5[$clave]
+						</div>
+
+
+						<div class='col col-8 mt-2'>
+							<input type='text' class='$parametro6[$clave] ancho__total__input campos__obligatorios text-center' name='$parametro6[$clave]'/>
+						</div>
+
+						";
+
+					}
+		
+
+				}else if($parametro7[$clave]=="boton"){
+
+					$modal.="
+
+						<div class='col col-10 titulo__enfasis mt-2'>
+							$parametro5[$clave]
+						</div>
+
+						<div class='col col-2 mt-2 text-center'>
+							<a data-bs-toggle='modal' data-bs-target='#$parametro6[$clave]' class='btn btn-secondary botonAc$parametro6[$clave]'><i class='fas fa-address-card'></i>&nbsp;&nbsp;Agregar</a>'
+						</div>
+
+						";						
+
+				}else if($parametro7[$clave]=="select"){
+
+					$modal.="
+
+					<div class='col col-12 titulo__enfasis mt-2'>
+						$parametro5[$clave]
+					</div>
+
+					<div class='col col-12 mt-2'>
+						<select class='$parametro6[$clave] ancho__total__input campos__obligatorios' name='$parametro6[$clave]'></select>
+					</div>
+
+					";				
+
+				}else if($parametro7[$clave]=="file"){
+
+
+
+					$modal.="
+
+					<div class='col col-12 titulo__enfasis mt-2'>
+						$parametro5[$clave]
+					</div>
+
+					<div class='col col-12 mt-2'>
+						<input type='file' class='$parametro6[$clave] ancho__total__input campos__obligatorios' name='$parametro6[$clave]' accept='application/pdf'/>
+					</div>
+
+					";				
+
+				}else if ($parametro8[$clave]=="textos") {
+						
+					$modal.="
+
+					<div class='col col-12 titulo__enfasis mt-2 uppercase__texto text-center textos__titulazos'>
+						
+					</div>
+
+					";
+
+
+				}
+
+
+			}
+
+			$modal.="
+					</div>
+
+						<div class='modal-footer d d-flex justify-content-center row'>
+
+							<div class='col col-12 d d-flex justify-content-center flex-wrap'>
+
+								<a type='button' class='btn btn-primary  left__margen boton__enlacesOcultos' id='$parametro4' name='$parametro4'>$parametro9</a>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;
+
+								<a type='button' class='btn btn-danger  left__margen modales__reload pointer__botones' data-dismiss='modal' aria-label='Close' aria-label='Close'>CERRAR</a>
+
+
+							</div>
+
+							<div class='col col-1 reload__Enviosrealizados text-center'></div>
+
+						</div>
+
+					</form>
+
+				</div>
+
+			</div>
+			";
+
+			return $modal;
+
+		} 
+
 
 		public function getModalGeneralPaid($parametro1,$parametro2,$parametro3,$parametro4,$parametro5,$parametro6,$parametro7,$parametro8){
 
@@ -18,12 +212,13 @@
 
 					        <div class='col' style='z-index: 1;'>
 
-					        	<h5 class='modal-title titulo__modalItems' id='exampleModalLabel'>$parametro2</h5>
+					        	<h5 class='modal-title titulo__modalItems' id='exampleModalLabel'>$parametro2: Viajes</h5>
 
 					        </div>
 
 					        <div class='col col-1' style='z-index: 2;'>
 							
+
 								<button type='button' class='btn-close modales__reload pointer__botones' data-bs-dismiss='modal' aria-label='Close'><i class='far fa-times-circle'></i></button>
 							
 							</div>
@@ -42,8 +237,7 @@
 
 								<a class='btn btn-warning pointer__botones' id='$parametro4' name='$parametro4'><i class='fas fa-th-list'></i>&nbsp;&nbsp;Agregar</a>
 
-
-								<input type='hidden' class='elemento__escondidoI' name='elemento__escondidoI'>
+								<input type='hidden' class='elemento_escondidoI' name='elemento_escondidoI'>
 
 
 							</div>
@@ -51,39 +245,33 @@
 							<div class='col col-6 d d-flex justify-content-center'>
 
 
+
 								<a class='btn btn-info pointer__botones refrezcar__tabla' id='$parametro5' name='$parametro5'><i class='fas fa-eye' style='color: white;'></i>&nbsp;&nbsp;Ver</a>
+
 
 
 							</div>
 
+
 							<div class='$parametro8 overflow_c eliminar__en__etapas__b'>
 
-							<table id='$parametro6'>
+
+							<table id='$parametro6' class='cell-border' >
 
 							
 
 								<thead>
 
-									<tr>
+									<tr class='monto__despejarEnvio' style='border: 1px solid white;'>
 
-									<th colspan='18' class='uppercase__texto monto__especial__titulo'>
-
-									<center>Rubro: Viajes</center>
-									</th>
-									</tr>
-									
-									<tr>
-										<th colspan='18' class='uppercase__texto monto__especial__titulo'>
+										<th colspan='5' class='uppercase__texto monto__especial__titulo'>
 										<center>Monto: ".number_format((float)$inversionOrganismo[0][nombreInversion], 2, '.', '')."</center>
 										</th>
-									</tr>
-							
-							
-									<tr class='monto__despejarEnvio'>
-										<th colspan='9' class='uppercase__texto'>
+										<th colspan='5' class='uppercase__texto monto__especial__titulo'>
 										<center>Monto por asignar: ".number_format((float)$inversionRestante, 2, '.', '')."</center>
 										</th>
-										<th colspan='9' class='uppercase__texto'>
+										<th colspan='6' class='uppercase__texto monto__especial__titulo'>
+
 										<center>Monto asignado: ".number_format((float)$inversionOrganismoQueda[0][sumaItemTotal], 2, '.', '')."</center>
 										</th>
 									</tr>
@@ -98,19 +286,11 @@
 										<th>
 										<center>Cod. Item</center>
 										</th>
-										<th style='width:25%!important;'>
+
+										<th style='width:15%!important;'>
 										<center>Item</center>
 										</th>
-										<th style='width:25%!important;'>
-										<center>Justificación de Adquisición</center>
-										</th>
-										<th style='width:25%!important;'>
-										<center>Cantidad a Adquirir</center>
-										</th>
-										<th style='width:25%!important;'>
-										<center> Tipo de Contratación</center>
-										</th>
-
+										
 										<th COLSPAN=1><center>ENE</center></th>
 										<th COLSPAN=1><center>FEB</center></th>
 										<th COLSPAN=1><center>MAR</center></th>	
@@ -125,8 +305,9 @@
 										<th COLSPAN=1><center>DIC</center></th>	
 
 
+										<th COLSPAN=1><center>Total</center></th>	
 
-										<th COLSPAN=1><center>Total Programación Financiera</center></th>	
+										<th COLSPAN=1><center>Guardar</center></th>	
 
 
 									</tr> 
@@ -142,14 +323,104 @@
 										<td>
 										<center style='font-size: 14px;'>Viajes</center>
 										</td>
+										
+
 										<td>
-										<center style='font-size: 14px;'><button type'button' class='btn btn-success'style='width=200px;'  data-bs-toggle='modal' data-bs-target='#programaCargado'> Ver </button></center>
+										<center style='font-size: 14px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+
+										</center>
 										</td>
+
 										<td>
-										<center style='font-size: 14px;'>1000</center>
+										<center style='font-size: 14px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+
+										</center>
 										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+
+										</center>
+										</td>
+
+
 										<td>
 										<center style='font-size: 14px;'>200</center>
+										</td>
+
+
+										
+										<td>
+										<center><button id='guardarMatriz37225'  class='btn btn-primary'><i class='fas fa-save'></i></button>
+										</center>
 										</td>
 
 
@@ -175,7 +446,6 @@
 
 
 		}
-
 
 
 
@@ -375,6 +645,9 @@
 
 		public function getModalAsignacion__paid($parametro1,$parametro2,$parametro3,$parametro4){
 
+			$objeto= new usuarioAcciones();
+			$array = array();
+
 			$modal="
 
 				<div class='modal fade' id='$parametro1' aria-hidden='true'  data-backdrop='static' data-keyboard='false' tabindex='-1'>
@@ -383,7 +656,7 @@
 
 						<form id='$parametro2' class='modal-content' >
 
-						  <input type='hidden' class='tipoPdf' id='tipoPdf' name='tipoPdf' value='asignacion__paid__presupuestarias'/>
+						  <input type='hidden' class='tipoPdf' id='tipoPdf' name='tipoPdf' value='asignacion_paid_presupuestarias'/>
 
 						  <input type='hidden' class='idOrganismo' id='idOrganismo' name='idOrganismo'/>
 
@@ -393,13 +666,13 @@
 
 					        <div class='col col-11 text-center'>
 
-					          <h5 class='modal-title titulo__asignacion__paid'></h5>
+					          <h5 class='modal-title titulo_asignacion_paid'></h5>
 
 					        </div>
 
 					        <div class='col col-1'>
 
-					        <span class='button pointer__botones botones__ideales modales__reload' data-dismiss='modal' aria-label='Close' aria-label='Close'><i class='fas fa-times-circle'></i></span>
+					        <span class='button pointer_botones botonesideales modales_reload' data-dismiss='modal' aria-label='Close' aria-label='Close'><i class='fas fa-times-circle'></i></span>
 
 					        </div>
 
@@ -409,73 +682,105 @@
 
 					      	<table class='col col-12'>
 
-					      		<thead>
-
-					      		<tr>
-
 
 					      	";
 
+					foreach ($parametro3 as $clave =>  $valor) {
 
-				foreach ($parametro3 AS $valor) {
-					
-					$modal.="	
-						     
-						      	<th class='cambio__textos'><center>".$valor."</center></th>
+						$arrayInformacionPaid=$objeto->getObtenerInformacionGeneral("SELECT a.idRubros,b.nombreRubros FROM poa_paid_componentes_rubros AS a INNER JOIN poa_paid_rubros AS b ON a.idRubros=b.idRubros WHERE a.idComponente='".$valor."';");
 
-							 ";
+						foreach ($arrayInformacionPaid as $valor2) {
+							array_push($array, $valor2["idRubros"]);
+						}
 
-				}
+						$contador=count($array);
 
 
-				$modal.="
-							</tr>
+						$modal.="
+
+						<table class='col col-12'>
+
+							<thead>
+
+								<tr>
+
+									<th colspan='$contador'>".strtoupper($parametro4[$clave])."</th>
+
+								</tr>
 
 							</thead>
 
-								<tbody>
+							<tbody>
 
-					      			<tr>";
+								<tr>
+
+							";
 
 
-			foreach ($parametro3 AS $key =>  $valor) {
+							foreach ($arrayInformacionPaid as $valor2) {
+
+								$modal.="
+
+								<th>".strtoupper($valor2["nombreRubros"])."</th>
+
+								";
+
+							}
+
+				$modal.="
+								</tr>";
+
+				$modal.="<tr>";
+
+					foreach ($arrayInformacionPaid as $valor3) {
+
+						$modal.="
+
+						<td>
+							<input type='text' id='rubro".$valor3["idRubros"]."' name='rubro".$valor3["idRubros"]."' attr='".$valor3["idRubros"]."' attrcomponentes='".$valor."' class='agrupados_valorestotales anchototalinput cambiodenumerof solonumeromontos enlacessumas sujetos_totales' value='0'/>
+						</td>
+
+						";
+
+					}
+
+				$modal.="</tr>";
+
+
+				$modal.=	"</tbody>
+
+
+						</table>";
+
+					}
 					
-				$modal.="	
-					<td>
-						 <input type='text' id='".$valor."' name='".$valor."' attr='".$parametro4[$key]."' class='agrupados__valores__totales ancho__total__input cambio__de__numero__f solo__numero__montos enlaces__sumas sujetos__totales' value='0'/>
-						
-					</td>";
 
-			}
+				$modal.="		
 
-
-			$modal.="
-					      			</tr>
-
-					      		</tbody>
+						<table>
 
 					      		<tfoot>
 
 						      		<tr>
 
-						      			<th colspan='2'>
-						      				Techo presupuestario
+						      			<th colspan='1'>
+						      				Techo asignado
 						      			</th>
 
 
-						      			<td colspan='2'>
-						      				<input type='text' id='techo__presupuestario' name='techo__presupuestario' class='ancho__total__input' value='0' readonly=''/>
+						      			<td colspan='1'>
+						      				<input type='text' id='techo_presupuestario' name='techopresupuestario' class='anchototal_input' value='0' readonly=''/>
 						      			</td>	
 
 						      		</tr>
 
 						      		<tr>
 
-						      			<td colspan='2'>
+						      			<td colspan='1'>
 						      				
 						      				 <center>
 
-						      				 	<button id='generarPdf__asignacion__paid' name='generarPdf__asignacion__paid' class='btn btn-info'>
+						      				 	<button id='generarPdf_asignacionpaid' name='generarPdfasignacion_paid' class='btn btn-info'>
 						      				 		<i class='fa fa-download' aria-hidden='true'></i>&nbsp;&nbsp;GENERAR NOTIFICACIÓN
 						      				 	</button>
 
@@ -483,9 +788,9 @@
 
 						      			</td>
 
-						      			<td colspan='2'>
+						      			<td colspan='1'>
 
-						      				 <a class='enlaces__dedicados__paids'>Descargar documento</a>
+						      				 <a class='enlaces_dedicados_paids'>Descargar documento</a>
 
 						      			</td>
 
@@ -498,11 +803,11 @@
 
 						  </div>
 
-						  <div class='modal-footer d d-flex justify-content-center row oculto__elemento__guardar'>
+						  <div class='modal-footer d d-flex justify-content-center row oculto_elemento_guardar'>
 
-							<div class='col col-12 d d-flex justify-content-center flex-wrap oculto__elemento__guardar'>
+							<div class='col col-12 d d-flex justify-content-center flex-wrap oculto_elemento_guardar'>
 
-								<a type='button' class='btn btn-primary oculto__elemento__guardar left__margen' id='guardarAsignacion__paid' name='guardarAsignacion__paid'>NOTIFICAR</a>
+								<a type='button' class='btn btn-primary oculto_elementoguardar leftmargen' id='guardarAsignacionpaid' name='guardarAsignacion_paid'>NOTIFICAR</a>
 
 							</div>
 
@@ -519,7 +824,7 @@
 			return $modal;
 
 		}
-
+		
 		public function modalReenvioPaid($parametro1,$parametro2){
 
 			$componentes= new componentes();
