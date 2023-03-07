@@ -447,7 +447,6 @@
 
 		}
 
-
 		public function getModalConfiguracion($parametro1,$parametro2,$parametro3,$parametro4,$parametro5,$parametro6,$parametro7,$parametro8){
 
 			$modal= "
