@@ -116,18 +116,18 @@
 		 	$conexionEstablecida=$conexionRecuperada->cConexion();	
 
 
-			// if ($condicionante==1) {
+			if ($condicionante==1) {
 
-			// 	$informacion__usuarios=$objeto->getObtenerInformacionGeneral("SELECT a.id_usuario FROM th_usuario AS a INNER JOIN th_usuario_roles AS b ON a.id_usuario=b.id_usuario WHERE b.id_rol='4' AND a.fisicamenteEstructura='3' AND a.estadoUsuario='A';");	
+				// $informacion__usuarios=$objeto->getObtenerInformacionGeneral("SELECT a.id_usuario FROM th_usuario AS a INNER JOIN th_usuario_roles AS b ON a.id_usuario=b.id_usuario WHERE b.id_rol='4' AND a.fisicamenteEstructura='3' AND a.estadoUsuario='A';");	
 
-			// 	$variables=$informacion__usuarios[0][id_usuario];
+				// $variables=$informacion__usuarios[0][id_usuario];
 				
-		 // 		$query="UPDATE poa_preliminar_envio SET planificacion2='$variables' WHERE idOrganismo='$idOrganismo' AND perioIngreso='$aniosPeriodos__ingesos';";
-			// 	$resultado= $conexionEstablecida->exec($query);
+		 		$query="UPDATE poa_preliminar_envio SET planificacion2='$coordinador__enlaces__enviadores' WHERE idOrganismo='$idOrganismo' AND perioIngreso='$aniosPeriodos__ingesos';";
+				$resultado= $conexionEstablecida->exec($query);
 
-			// 	$mensaje=2;
+				$mensaje=2;
 
-			// }else{
+			}else{
 
 
 				$direccionDocumentos="../../documentos/aprobacion/";
@@ -143,7 +143,7 @@
 
 				$mensaje=1;
 
-			// }
+			}
 
 			
 			$jason['mensaje']=$mensaje;
@@ -832,7 +832,7 @@
 	
 			$arrayAgrupados = json_decode($arrayAgrupados);
 			$arrayAgrupados__attr = json_decode($arrayAgrupados__attr);	
-
+			$arrayAgrupados__attr__componentes = json_decode($arrayAgrupados__attr__componentes);	
 			
 
 
@@ -849,12 +849,10 @@
 
 
 	 		foreach ($arrayAgrupados__attr as $key => $value) {
-	 		
-	 			$inserta=$objeto->getInsertaNormal('poa_paid_asignacion', array("`idPaidInversion`, ","`fecha`, ","`hora`, ","`idOrganismo`, ","`estado`, ","`idUsuario`, ","`idRubros`, ","`montos`, ","`texto__documentos`, ","`valor__comparativo`, ","`idAsignacion`, ","`perioIngreso`"),array("'$fecha_actual', ","'$hora_actual', ","'$idOrganismo', ","'A', ","'$idUsuarioPrincipal', ","'$value', ","'$arrayAgrupados[$key]', ","'$texto__documentos', ","'$valorComparativo', ","'$maximo', ","'$aniosPeriodos__ingesos'"));
+
+	 			$inserta=$objeto->getInsertaNormal('poa_paid_asignacion', array("`idPaidInversion`, ","`fecha`, ","`hora`, ","`idOrganismo`, ","`estado`, ","`idUsuario`, ","`idRubros`, ","`montos`, ","`texto__documentos`, ","`valor__comparativo`, ","`idAsignacion`, ","`perioIngreso`, ","`idComponentes`"),array("'$fecha_actual', ","'$hora_actual', ","'$idOrganismo', ","'A', ","'$idUsuarioPrincipal', ","'$value', ","'$arrayAgrupados[$key]', ","'$texto__documentos', ","'$valorComparativo', ","'$maximo', ","'$aniosPeriodos__ingesos', ","'$arrayAgrupados__attr__componentes[$key]'"));
 
 	 		}
-
-
 
 			$mensaje=1;
 			$jason['mensaje']=$mensaje;		
@@ -2050,6 +2048,8 @@
 				$maximoProgramacion__financiera=$objeto->getObtenerInformacionGeneral("SELECT MAX(idProgramacionFinanciera) AS maximo FROM poa_programacion_financiera;");
 
 				$maximo=$maximoProgramacion__financiera[0][maximo];
+
+				$evento__array[$i]=filter_var($evento__array[$i], FILTER_SANITIZE_MAGIC_QUOTES);
 
 				$inserta2=$objeto->getInsertaNormal('poa_actdeportivas', array("`idPda`, ","`tipoFinanciamiento`, ","`nombreEvento`, ","`Deporte`, ","`provincia`, ","`ciudadPais`, ","`alcance`, ","`fechaInicio`, ","`fechaFin`, ","`genero`, ","`categoria`, ","`numeroEntreandores`, ","`numeroAtletas`, ","`total`, ","`mBenefici`, ","`hBenefici`, ","`justificacionAd`, ","`canitdarBie`, ","`idProgramacionFinanciera`, ","`enero`, ","`febrero`, ","`marzo`, ","`abril`, ","`mayo`, ","`junio`, ","`julio`, ","`agosto`, ","`septiembre`, ","`octubre`, ","`noviembre`, ","`diciembre`, ","`totalElem`, ","`fecha`, ","`modifica`, ","`detalleBien`, ","`perioIngreso`"),array("'$tipo__financiamiento_array[$i]', ","'$evento__array[$i]', ","'$deporte__array[$i]', ","'$provincia__array[$i]', ","'$pais__array[$i]', ","'$alcance__array[$i]', ","'$fecha__inicio__array[$i]', ","'$fecha__fin__array[$i]', ","'$genero__array[$i]', ","'$categoria__array[$i]', ","'$numero__entrenadores__array[$i]', ","'$numero__atletas__array[$i]', ","'$total__array__beneficiarios[$i]', ","'$beneficiarios__array[$i]', ","'$beneficiarios2__array[$i]', ","'$justificacion__array[$i]', ","'$cantidad__bienes__array[$i]', ","'$maximo', ","'$enero__array[$i]', ","'$febrero__array[$i]', ","'$marzo__array[$i]', ","'$abril__array[$i]', ","'$mayo__array[$i]', ","'$junio__array[$i]', ","'$julio__array[$i]', ","'$agosto__array[$i]', ","'$septiembre__array[$i]', ","'$octubre__array[$i]', ","'$noviembre__array[$i]', ","'$diciembre__array[$i]', ","'$total__array[$i]', ","'$fecha_actual', ","'A', ","'$detalle__adquisicion__array[$i]', ","'$aniosPeriodos__ingesos'"));
 
@@ -4503,7 +4503,7 @@
 
 		case  "rubroActualiza__paid":
 
-			$valores2=array("nombreRubros='$input__1',idComponente='$input__2__rubroPaid',idIndicador='$input__3__rubroPaid'");
+			$valores2=array("nombreRubros='$input__1'");
 			$actualiza2=$objeto->getActualiza("poa_paid_rubros",$valores2,"idRubros",$enviado);
 			
 			$mensaje=1;
@@ -4635,8 +4635,8 @@
 
 		case  "componenteActualiza__paid":
 
-			$valores2=array("nombreComponentes='$input__1'");
-			$actualiza2=$objeto->getActualiza("poa_paid_componentes",$valores2,"idComponentes",$enviado);
+			$valores2=array("nombreComponentes='$input__1',idIndicador='$input__2__tipoPaid'");
+			$actualiza2=$objeto->getActualiza("poa_paid_componentes",$valores2,"idComponentes",$idComponente);
 
 			$mensaje=1;
 			$jason['mensaje']=$mensaje;
@@ -4790,9 +4790,23 @@
 
 			$arrayInformacion = json_decode($arrayInformacion);
 
+			$data1=array();
 
-			$inserta=$objeto->getInsertaNormal('poa_paid_componentes', array("`idComponentes`, ","`nombreComponentes`, ","`idUsuario`, ","`fecha`, ","`hora`, ","`identificador`, ","`perioIngreso`"),array("'$arrayInformacion[0]', ","'$idUsuarioPrincipal', ","'$fecha_actual', ","'$hora_actual', ","'$identificador', ","'$aniosPeriodos__ingesos'"));
+			foreach ($arrayInformacion as $clave => $valor) {
+				if ($clave>1) {
+					array_push($data1,$valor);
+				}
+			}			
 
+			$inserta=$objeto->getInsertaNormal('poa_paid_componentes', array("`idComponentes`, ","`nombreComponentes`, ","`idUsuario`, ","`fecha`, ","`hora`, ","`identificador`, ","`perioIngreso`, ","`idIndicador`"),array("'$arrayInformacion[0]', ","'$idUsuarioPrincipal', ","'$fecha_actual', ","'$hora_actual', ","'$identificador', ","'$aniosPeriodos__ingesos', ","'$arrayInformacion[1]'"));
+
+			$obtenerInformacion__usens=$objeto->getObtenerInformacionGeneral("SELECT MAX(idComponentes) AS maximo FROM poa_paid_componentes;");
+
+			$maximo=$obtenerInformacion__usens[0][maximo];
+
+			foreach ($data1 as $value) {
+				$inserta2=$objeto->getInsertaNormal('poa_paid_componentes_rubros', array("`idComponentesRubros`, ","`idComponente`, ","`idRubros`, ","`fecha`, ","`hora`"),array("'$maximo', ","'$value', ","'$fecha_actual', ","'$hora_actual'"));
+			}
 			
 			$mensaje=1;
 			$jason['mensaje']=$mensaje;
@@ -4804,7 +4818,7 @@
 			$arrayInformacion = json_decode($arrayInformacion);
 
 
-			$inserta=$objeto->getInsertaNormal('poa_item', array("`idItem`, ","`nombreItem`, ","`itemPreesupuestario`, ","`idUsuario`, ","`fecha`, ","`hora`, ","`identificador`, ","`perioIngreso`"),array("'$arrayInformacion[0]', ","'$arrayInformacion[1]', ","'$idUsuarioPrincipal', ","'$fecha_actual', ","'$hora_actual', ","'$identificador', ","'$aniosPeriodos__ingesos'"));
+			$inserta=$objeto->getInsertaNormal('poa_paid_item', array("`idItem`, ","`nombreItem`, ","`itemPreesupuestario`, ","`idUsuario`, ","`fecha`, ","`hora`, ","`identificador`, ","`perioIngreso`"),array("'$arrayInformacion[0]', ","'$arrayInformacion[1]', ","'$idUsuarioPrincipal', ","'$fecha_actual', ","'$hora_actual', ","'$identificador', ","'$aniosPeriodos__ingesos'"));
 
 			
 			$mensaje=1;
@@ -4831,7 +4845,7 @@
 			$arrayInformacion = json_decode($arrayInformacion);
 
 
-			$inserta=$objeto->getInsertaNormal('poa_areaencargada', array("`idAreaEncargada`, ","`nombreArea`, ","`idUsuario`, ","`fecha`, ","`hora`, ","`identificador`, ","`perioIngreso`"),array("'$arrayInformacion[0]', ","'$idUsuarioPrincipal', ","'$fecha_actual', ","'$hora_actual', ","'$identificador', ","'$aniosPeriodos__ingesos'"));
+			$inserta=$objeto->getInsertaNormal('poa_paid_areaencargada', array("`idAreaEncargada`, ","`nombreArea`, ","`idUsuario`, ","`fecha`, ","`hora`, ","`identificador`, ","`perioIngreso`"),array("'$arrayInformacion[0]', ","'$idUsuarioPrincipal', ","'$fecha_actual', ","'$hora_actual', ","'$identificador', ","'$aniosPeriodos__ingesos'"));
 
 			
 			$mensaje=1;
@@ -4845,7 +4859,7 @@
 			$arrayInformacion = json_decode($arrayInformacion);
 
 
-			$inserta=$objeto->getInsertaNormal('poa_area_accion', array("`idAreaAccion`, ","`accion`, ","`idUsuario`, ","`fecha`, ","`hora`, ","`identificador`, ","`perioIngreso`"),array("'$arrayInformacion[0]', ","'$idUsuarioPrincipal', ","'$fecha_actual', ","'$hora_actual', ","'$identificador', ","'$aniosPeriodos__ingesos'"));
+			$inserta=$objeto->getInsertaNormal('poa_paid_area_accion', array("`idAreaAccion`, ","`accion`, ","`idUsuario`, ","`fecha`, ","`hora`, ","`identificador`, ","`perioIngreso`"),array("'$arrayInformacion[0]', ","'$idUsuarioPrincipal', ","'$fecha_actual', ","'$hora_actual', ","'$identificador', ","'$aniosPeriodos__ingesos'"));
 
 			
 			$mensaje=1;
@@ -4884,7 +4898,7 @@
 			$arrayCheckeds = json_decode($arrayCheckeds);
 			$arrayInformacion = json_decode($arrayInformacion);
 
-			$inserta=$objeto->getInsertaNormal('poa_paid_rubros', array("`idRubros`, ","`nombreRubros`, ","`idComponente`, ","`idIndicador`, ","`idUsuario`, ","`fecha`, ","`hora`, ","`identificador`, ","`perioIngreso`"),array("'$arrayInformacion[0]', ","'$arrayInformacion[1]', ","'$arrayInformacion[2]', ","'$idUsuarioPrincipal', ","'$fecha_actual', ","'$hora_actual', ","'$identificador', ","'$aniosPeriodos__ingesos'"));
+			$inserta=$objeto->getInsertaNormal('poa_paid_rubros', array("`idRubros`, ","`nombreRubros`, ","`idComponente`, ","`idIndicador`, ","`idUsuario`, ","`fecha`, ","`hora`, ","`identificador`, ","`perioIngreso`"),array("'$arrayInformacion[0]', ","NULL, ","NULL, ","'$idUsuarioPrincipal', ","'$fecha_actual', ","'$hora_actual', ","'$identificador', ","'$aniosPeriodos__ingesos'"));
 
 			$maximo=$objeto->getMaximoFuncion('idRubros','poa_paid_rubros');
 
@@ -4965,6 +4979,19 @@
 			$jason['mensaje']=$mensaje;
 
 		break;
+
+		case  "componentesRubrosPaid":
+
+			$arrayInformacion = json_decode($arrayInformacion);
+
+	
+			$inserta=$objeto->getInsertaNormal('poa_paid_componentes_rubros', array("`idComponentesRubros`, ","`idComponente`, ","`idRubros`, ","`fecha`, ","`hora`, ","`periodo`"),array("'$idUsados__items', ","'$arrayInformacion[0]', ","'$fecha_actual', ","'$hora_actual', ","'$aniosPeriodos__ingesos'"));
+
+			$mensaje=1;
+			$jason['mensaje']=$mensaje;
+
+		break;
+
 
 		/*=====  End of Inserta paid acciones  ======*/
 		

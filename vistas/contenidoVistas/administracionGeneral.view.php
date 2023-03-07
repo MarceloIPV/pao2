@@ -67,6 +67,7 @@
 
 <?=$componentes->getModalConfiguracion("tipoOrganismoModal","Tipos de organismo","tipoOrganismoModalContent","agregarTipoOrganismo","verTipoOrganismo","tablaTipoOrganismo",["nombreTipo","Acción","Nombre objetivo","Área encargada"],"contenedorTipoTabla");?>
 
+
 <?=$componentes->getModalConfiguracion("areaAccionModal","Área de acción","areaAccionModalContent","agregarAreaAccion","verAreaAccion","tablaAreaAccion",["Área acción"],"contenedorAccionTabla");?>
 
 <?=$componentes->getModalConfiguracion("areaEncargadaModal","Área encargada","areaEncargadaModalContent","agregarAreaEncargada","verAreaEncargada","tablaAreaEncargada",["Área encargada"],"contenedorAreaEncargadaTabla");?>

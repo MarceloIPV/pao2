@@ -812,11 +812,11 @@
 
 			if ($especificidad=="si"){
 
-				$indicadorInformacion=$objeto->getObtenerInformacionGeneral("SELECT idPoaEnviado,primertrimestre,segundotrimestre,tercertrimestre,cuartotrimestre,metaindicador FROM poa_poainicial WHERE modifica='I' AND idOrganismo='$idOrganismo' AND perioIngreso='$aniosPeriodos__ingesos';");
+				$indicadorInformacion=$objeto->getObtenerInformacionGeneral("SELECT  REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(b.nombreActividades, 'Ã¡', 'á'),'Ã©','é'),'Ã­','í'),'Ã³','ó'),'Ãº','ú'),'Ã‰','É'),'ÃŒ','Í'),'Ã“','Ó'),'Ãš','Ú'),'Ã±','ñ'),'Ã‘','Ñ'),'&#039;',' ` '),'Ã','Á'),'',' '),'Ã','Á'),'SI','SI'),'â€œ',''),'â€',''),'Á²','ó') AS actividad,a.idPoaEnviado, a.primertrimestre, a.segundotrimestre, a.tercertrimestre, a.cuartotrimestre, a.metaindicador FROM poa_poainicial AS a INNER JOIN poa_actividades AS b ON a.idActividad=b.idActividades WHERE a.modifica='I' AND  a.idOrganismo='$idOrganismo' AND  a.perioIngreso='$aniosPeriodos__ingesos' GROUP BY a.idActividad ORDER BY a.idPoaEnviado DESC;");
 
 			}else{
 
-				$indicadorInformacion=$objeto->getObtenerInformacionGeneral("SELECT idPoaEnviado,primertrimestre,segundotrimestre,tercertrimestre,cuartotrimestre,metaindicador FROM poa_poainicial WHERE idOrganismo='$idOrganismo' AND modifica='A' AND perioIngreso='$aniosPeriodos__ingesos';");
+				$indicadorInformacion=$objeto->getObtenerInformacionGeneral("SELECT  REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(b.nombreActividades, 'Ã¡', 'á'),'Ã©','é'),'Ã­','í'),'Ã³','ó'),'Ãº','ú'),'Ã‰','É'),'ÃŒ','Í'),'Ã“','Ó'),'Ãš','Ú'),'Ã±','ñ'),'Ã‘','Ñ'),'&#039;',' ` '),'Ã','Á'),'',' '),'Ã','Á'),'SI','SI'),'â€œ',''),'â€',''),'Á²','ó') AS actividad,a.idPoaEnviado, a.primertrimestre, a.segundotrimestre, a.tercertrimestre, a.cuartotrimestre, a.metaindicador FROM poa_poainicial AS a INNER JOIN poa_actividades AS b ON a.idActividad=b.idActividades WHERE a.modifica='A' AND  a.idOrganismo='$idOrganismo' AND  a.perioIngreso='$aniosPeriodos__ingesos' GROUP BY a.idActividad ORDER BY a.idPoaEnviado DESC;");
 
 				
 			}

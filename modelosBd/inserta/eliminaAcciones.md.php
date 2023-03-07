@@ -27,6 +27,28 @@
 	switch ($tipo) {
 
 
+		case  "eliminar__componente__rubros__principales__s":
+
+			$elimina2=$objeto->getElimina('poa_paid_componentes_rubros','idComponente',$idEnviado);
+			$elimina=$objeto->getElimina('poa_paid_componentes','idComponentes',$idEnviado);
+
+			$mensaje=1;
+			$jason['mensaje']=$mensaje;
+
+		break;
+
+
+
+		case  "eliminar__componente__rubros__s":
+
+			$elimina=$objeto->getElimina('poa_paid_componentes_rubros','idComponentesRubros',$idEnviado);
+
+			$mensaje=1;
+			$jason['mensaje']=$mensaje;
+
+		break;
+
+
 		case  "eliminantes__mant__tenimientos":
 
 			$informacion__obtenidas=$objeto->getObtenerInformacionGeneral("SELECT a.*,b.*,c.nombreItem,c.idItem,d.nombreProvincia FROM poa_mantenimiento AS a INNER JOIN poa_programacion_financiera AS b ON a.idProgramacionFinanciera=b.idProgramacionFinanciera INNER JOIN poa_item AS c ON c.idItem=b.idItem INNER JOIN in_md_provincias AS d ON d.idProvincia=a.provincia WHERE a.idMantenimiento='$idMantenimiento';");
@@ -140,7 +162,7 @@
 		case  "accionElimina":
 
 
-			$elimina=$objeto->getElimina('poa_area_accion','idAreaAccion',$idEnviado);
+			$elimina=$objeto->getElimina('poa_paid_area_accion','idAreaAccion',$idEnviado);
 
 
 			$mensaje=1;
@@ -152,7 +174,7 @@
 
 		case  "encargadaElimina":
 
-			$elimina=$objeto->getElimina('poa_areaencargada','idAreaEncargada',$idEnviado);
+			$elimina=$objeto->getElimina('poa_paid_areaencargada','idAreaEncargada',$idEnviado);
 
 
 			$mensaje=1;
@@ -176,7 +198,7 @@
 		case  "itemElimina":
 
 
-			$elimina=$objeto->getElimina('poa_item','idItem',$idEnviado2);
+			$elimina=$objeto->getElimina('poa_paid_item','idItem',$idEnviado2);
 
 
 			$mensaje=1;

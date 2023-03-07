@@ -218,7 +218,8 @@
 
 					        <div class='col col-1' style='z-index: 2;'>
 							
-								<button type='button' class='btn-close modales_reload pointer_botones' data-bs-dismiss='modal' aria-label='Close'><i class='far fa-times-circle'></i></button>
+
+								<button type='button' class='btn-close modales__reload pointer__botones' data-bs-dismiss='modal' aria-label='Close'><i class='far fa-times-circle'></i></button>
 							
 							</div>
 
@@ -244,12 +245,16 @@
 							<div class='col col-6 d d-flex justify-content-center'>
 
 
-								<a class='btn btn-info pointer_botones refrezcar_tabla' id='$parametro5' name='$parametro5'><i class='fas fa-eye' style='color: white;'></i>&nbsp;&nbsp;Ver</a>
+
+								<a class='btn btn-info pointer__botones refrezcar__tabla' id='$parametro5' name='$parametro5'><i class='fas fa-eye' style='color: white;'></i>&nbsp;&nbsp;Ver</a>
+
 
 
 							</div>
 
-							<div class='$parametro8 overflow_c eliminar_enetapas_b'>
+
+							<div class='$parametro8 overflow_c eliminar__en__etapas__b'>
+
 
 							<table id='$parametro6' class='cell-border' >
 
@@ -258,13 +263,15 @@
 								<thead>
 
 									<tr class='monto__despejarEnvio' style='border: 1px solid white;'>
-										<th colspan='5' class='uppercase_texto montoespecial_titulo'>
+
+										<th colspan='5' class='uppercase__texto monto__especial__titulo'>
 										<center>Monto: ".number_format((float)$inversionOrganismo[0][nombreInversion], 2, '.', '')."</center>
 										</th>
-										<th colspan='5' class='uppercase_texto montoespecial_titulo'>
+										<th colspan='5' class='uppercase__texto monto__especial__titulo'>
 										<center>Monto por asignar: ".number_format((float)$inversionRestante, 2, '.', '')."</center>
 										</th>
-										<th colspan='6' class='uppercase_texto montoespecial_titulo'>
+										<th colspan='6' class='uppercase__texto monto__especial__titulo'>
+
 										<center>Monto asignado: ".number_format((float)$inversionOrganismoQueda[0][sumaItemTotal], 2, '.', '')."</center>
 										</th>
 									</tr>
@@ -320,73 +327,87 @@
 
 										<td>
 										<center style='font-size: 14px;'>
-										<input type='text' class='enero37225 meses_atados37225  meses_atadosAjax37225' value='0'  style='width:40px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+
 										</center>
 										</td>
 
 										<td>
 										<center style='font-size: 14px;'>
-										<input type='text' class='enero37225 meses_atados37225  meses_atadosAjax37225' value='0'  style='width:40px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+
 										</center>
 										</td>
 
 										<td>
 										<center style='font-size: 14px;'>
-										<input type='text' class='enero37225 meses_atados37225  meses_atadosAjax37225' value='0'  style='width:40px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+
 										</center>
 										</td>
 
 										<td>
 										<center style='font-size: 14px;'>
-										<input type='text' class='enero37225 meses_atados37225  meses_atadosAjax37225' value='0'  style='width:40px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+
 										</center>
 										</td>
 
 										<td>
 										<center style='font-size: 14px;'>
-										<input type='text' class='enero37225 meses_atados37225  meses_atadosAjax37225' value='0'  style='width:40px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
 										</center>
 										</td>
 
 										<td>
 										<center style='font-size: 14px;'>
-										<input type='text' class='enero37225 meses_atados37225  meses_atadosAjax37225' value='0'  style='width:40px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+
 										</center>
 										</td>
 
 										<td>
 										<center style='font-size: 14px;'>
-										<input type='text' class='enero37225 meses_atados37225  meses_atadosAjax37225' value='0'  style='width:40px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
 										</center>
 										</td>
 
 										<td>
 										<center style='font-size: 14px;'>
-										<input type='text' class='enero37225 meses_atados37225  meses_atadosAjax37225' value='0'  style='width:40px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
 										</center>
 										</td>
 
 										<td>
 										<center style='font-size: 14px;'>
-										<input type='text' class='enero37225 meses_atados37225  meses_atadosAjax37225' value='0'  style='width:40px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
 										</center>
 										</td>
 
 										<td>
 										<center style='font-size: 14px;'>
-										<input type='text' class='enero37225 meses_atados37225  meses_atadosAjax37225' value='0'  style='width:40px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
 										</center>
 										</td>
 
 										<td>
 										<center style='font-size: 14px;'>
-										<input type='text' class='enero37225 meses_atados37225  meses_atadosAjax37225' value='0'  style='width:40px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
 										</center>
 										</td>
 
 										<td>
 										<center style='font-size: 14px;'>
-										<input type='text' class='enero37225 meses_atados37225  meses_atadosAjax37225' value='0'  style='width:40px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+
 										</center>
 										</td>
 

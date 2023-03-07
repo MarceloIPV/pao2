@@ -50,7 +50,7 @@ $(".contenedorGrupoGasto").hide();
 $(".contenedorActividades").hide();
 $(".contenedorItemsTablaAc").hide();
 $(".contenedorItems").hide();
-
+$(".contenedorRubosItemsPrincipalTabla").hide();
 
 $("#nombreCiudadano").hide();
 $("#sexoCiudadano").hide();

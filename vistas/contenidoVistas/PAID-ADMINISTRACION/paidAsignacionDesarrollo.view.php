@@ -7,8 +7,15 @@
 <?php $array = array();?>
 <?php $array2 = array();?>
 
-<?php $arrayInformacion=$objeto->getObtenerInformacionGeneral("SELECT nombreRubros FROM poa_paid_rubros WHERE identificador='1';");?>
-<?php $arrayInformacion2=$objeto->getObtenerInformacionGeneral("SELECT idRubros FROM poa_paid_rubros WHERE identificador='1';");?>
+
+<?php $arrayInformacion=$objeto->getObtenerInformacionGeneral("SELECT a.idComponentes,a.nombreComponentes FROM poa_paid_componentes AS a INNER JOIN poa_paid_componentes_rubros AS b ON a.idComponentes=b.idComponente WHERE a.identificador='1' GROUP BY a.idComponentes;");?>
+
+<?php foreach ($arrayInformacion as $valor): ?>
+
+	<?php array_push($array, $valor["idComponentes"]);?>
+	<?php array_push($array2, $valor["nombreComponentes"]);?>
+
+<?php endforeach ?>
 
 <div class="content-wrapper">
 
@@ -21,28 +28,6 @@
 			<input type="hidden" id="valorComparativo" name="valorComparativo" value="1">
 
 			<input type="hidden" id="texto__documentos" name="texto__documentos">
-
-
-			<?php foreach ($arrayInformacion as $clave => $valor): ?>
-
-				<?php foreach ($valor as $clave2 => $valor2): ?>
-
-					<?php array_push($array, $valor2);?>
-
-				<?php endforeach ?>
-				
-			<?php endforeach ?>
-
-
-			<?php foreach ($arrayInformacion2 as $clave => $valor): ?>
-
-				<?php foreach ($valor as $clave2 => $valor2): ?>
-
-					<?php array_push($array2, $valor2);?>
-
-				<?php endforeach ?>
-				
-			<?php endforeach ?>
 
 			<table id="asignarPresupuesto__paid" class="col col-12 cell-border">
 
