@@ -448,7 +448,6 @@
 		}
 
 
-
 		public function getModalConfiguracion($parametro1,$parametro2,$parametro3,$parametro4,$parametro5,$parametro6,$parametro7,$parametro8){
 
 			$modal= "
@@ -474,7 +473,7 @@
 
 					        <div class='col col-1'>";
 
-				if ($parametro1=="actividadesEditaModalAc" || $parametro1=="rubrosEditaModalAc") {
+				if ($parametro1=="actividadesEditaModalAc" || $parametro1=="rubrosEditaModalAc" || $parametro1=="rubrosEditaModalComponentes") {
 
 					
 					$modal.="<span class='button pointer__botones botones__ideales' data-dismiss='modal' aria-label='Close' aria-label='Close'><i class='fas fa-times-circle'></i></span>";
@@ -522,7 +521,7 @@
 
 								}
 
-								if ($parametro1!="actividadesEditaModalAc" &&  $parametro1!="rubrosEditaModalAc") {
+								if ($parametro1!="actividadesEditaModalAc" &&  $parametro1!="rubrosEditaModalAc" &&  $parametro1!="rubrosEditaModalComponentes") {
 									$modal.="<th>Editar</th>";
 								}
 
@@ -656,7 +655,7 @@
 
 						<form id='$parametro2' class='modal-content' >
 
-						  <input type='hidden' class='tipoPdf' id='tipoPdf' name='tipoPdf' value='asignacion_paid_presupuestarias'/>
+						  <input type='hidden' class='tipoPdf' id='tipoPdf' name='tipoPdf' value='asignacion__paid__presupuestarias'/>
 
 						  <input type='hidden' class='idOrganismo' id='idOrganismo' name='idOrganismo'/>
 
@@ -666,13 +665,13 @@
 
 					        <div class='col col-11 text-center'>
 
-					          <h5 class='modal-title titulo_asignacion_paid'></h5>
+					          <h5 class='modal-title titulo__asignacion__paid'></h5>
 
 					        </div>
 
 					        <div class='col col-1'>
 
-					        <span class='button pointer_botones botonesideales modales_reload' data-dismiss='modal' aria-label='Close' aria-label='Close'><i class='fas fa-times-circle'></i></span>
+					        <span class='button pointer__botones botones__ideales modales__reload' data-dismiss='modal' aria-label='Close' aria-label='Close'><i class='fas fa-times-circle'></i></span>
 
 					        </div>
 
@@ -737,7 +736,7 @@
 						$modal.="
 
 						<td>
-							<input type='text' id='rubro".$valor3["idRubros"]."' name='rubro".$valor3["idRubros"]."' attr='".$valor3["idRubros"]."' attrcomponentes='".$valor."' class='agrupados_valorestotales anchototalinput cambiodenumerof solonumeromontos enlacessumas sujetos_totales' value='0'/>
+							<input type='text' id='rubro".$valor3["idRubros"]."' name='rubro".$valor3["idRubros"]."' attr='".$valor3["idRubros"]."' attrcomponentes='".$valor."' class='agrupados__valores__totales ancho__total__input cambio__de__numero__f solo__numero__montos enlaces__sumas sujetos__totales' value='0'/>
 						</td>
 
 						";
@@ -769,7 +768,7 @@
 
 
 						      			<td colspan='1'>
-						      				<input type='text' id='techo_presupuestario' name='techopresupuestario' class='anchototal_input' value='0' readonly=''/>
+						      				<input type='text' id='techo__presupuestario' name='techo__presupuestario' class='ancho__total__input' value='0' readonly=''/>
 						      			</td>	
 
 						      		</tr>
@@ -780,7 +779,7 @@
 						      				
 						      				 <center>
 
-						      				 	<button id='generarPdf_asignacionpaid' name='generarPdfasignacion_paid' class='btn btn-info'>
+						      				 	<button id='generarPdf__asignacion__paid' name='generarPdf__asignacion__paid' class='btn btn-info'>
 						      				 		<i class='fa fa-download' aria-hidden='true'></i>&nbsp;&nbsp;GENERAR NOTIFICACIÓN
 						      				 	</button>
 
@@ -790,7 +789,7 @@
 
 						      			<td colspan='1'>
 
-						      				 <a class='enlaces_dedicados_paids'>Descargar documento</a>
+						      				 <a class='enlaces__dedicados__paids'>Descargar documento</a>
 
 						      			</td>
 
@@ -803,11 +802,11 @@
 
 						  </div>
 
-						  <div class='modal-footer d d-flex justify-content-center row oculto_elemento_guardar'>
+						  <div class='modal-footer d d-flex justify-content-center row oculto__elemento__guardar'>
 
-							<div class='col col-12 d d-flex justify-content-center flex-wrap oculto_elemento_guardar'>
+							<div class='col col-12 d d-flex justify-content-center flex-wrap oculto__elemento__guardar'>
 
-								<a type='button' class='btn btn-primary oculto_elementoguardar leftmargen' id='guardarAsignacionpaid' name='guardarAsignacion_paid'>NOTIFICAR</a>
+								<a type='button' class='btn btn-primary oculto__elemento__guardar left__margen' id='guardarAsignacion__paid' name='guardarAsignacion__paid'>NOTIFICAR</a>
 
 							</div>
 
@@ -824,7 +823,7 @@
 			return $modal;
 
 		}
-		
+
 		public function modalReenvioPaid($parametro1,$parametro2){
 
 			$componentes= new componentes();
