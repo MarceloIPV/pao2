@@ -23,6 +23,7 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 <div class="content-wrapper d d-flex flex-column align-items-center">
 	
 		<?=$componentes->getContenidoActividadesPAID("tablaPAIDGeneral","
+
 		<tr>
 			<th colspan='6' class='uppercase__texto monto__especial__titulo'>
 			<center>Monto: ".number_format((float)$inversionOrganismo[0][nombreInversion], 2, '.', '')."</center>
@@ -45,8 +46,10 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 			<th style='width:20%!important;'>
 			<center>Componente</center>
 			</th>
+
 			<th style='width:20%!important;'>
 			<center>Indicador</center>
+
 			</th>
 			<th style='width:10%!important;'>
 			<center>Planificar Indicador</center>
@@ -71,6 +74,7 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 			
 			<td>
 			<center style='font-size: 14px;'>Eventos</center>
+
 			</td>
 			<td>
 			<center style='font-size: 14px;'><button type'button' class='btn btn-success'style='width=200px;'  data-bs-toggle='modal' data-bs-target='#modalActividad'> Ver </button></center>
