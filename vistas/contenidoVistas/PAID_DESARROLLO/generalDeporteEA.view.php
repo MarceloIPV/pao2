@@ -23,24 +23,21 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 <div class="content-wrapper d d-flex flex-column align-items-center">
 	
 		<?=$componentes->getContenidoActividadesPAID("tablaPAIDGeneral","
-
 		
 		<tr>
-			<th colspan='5' class='uppercase__texto monto__especial__titulo'>
+			<th colspan='6' class='uppercase__texto monto__especial__titulo'>
 			<center>Monto: ".number_format((float)$inversionOrganismo[0][nombreInversion], 2, '.', '')."</center>
 			</th>
 		</tr>
-
 
 		<tr class='monto__despejarEnvio'>
 			<th colspan='3' class='uppercase__texto'>
 			<center>Monto por asignar: ".number_format((float)$inversionRestante, 2, '.', '')."</center>
 			</th>
-			<th colspan='2' class='uppercase__texto'>
+			<th colspan='3' class='uppercase__texto'>
 			<center>Monto asignado: ".number_format((float)$inversionOrganismoQueda[0][sumaItemTotal], 2, '.', '')."</center>
 			</th>
 		</tr>
-		
 		
 		<tr>
 			<th>
@@ -50,7 +47,10 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 			<center>Componente</center>
 			</th>
 			<th style='width:25%!important;'>
-			<center>Rubro</center>
+			<center>Indicadores</center>
+			</th>
+			<th style='width:15%!important;'>
+			<center>Items</center>
 			</th>
 			<th style='width:25%!important;'>
 			<center>Monto Asignado</center>
@@ -58,18 +58,19 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 			<th style='width:25%!important;'>
 			<center>Monto Por Asignar</center>
 			</th>
-
-
 		</tr> "
 		
 		,"
-
+		
 		<tr>
 			<td class='uppercase__texto' >
 			<center style='font-size: 14px;'>1</center>
 			</td>
 			<td>
 			<center style='font-size: 14px;'>Viajes</center>
+			</td>
+			<td>
+			<center style='font-size: 14px;'>Eventos</center>
 			</td>
 			<td>
 			<center style='font-size: 14px;'><button type'button' class='btn btn-success'style='width=200px;'  data-bs-toggle='modal' data-bs-target='#itemsCargados'> Ver </button></center>
@@ -80,10 +81,7 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 			<td>
 			<center style='font-size: 14px;'>200</center>
 			</td>
-
-
 		</tr>
-	
 
 		");
 		
@@ -93,6 +91,6 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 </div>
 
 
-<?=$componentesPaid->getModalGeneralPaid("itemsCargados","Rubros","itemContent","agregarItem","verItem","tablaItjem__paid",["Item","Ítem presupuestario"],"contenedorItemTabla");?>
+<?=$componentesPaid->getModalGeneralPaid("itemsCargados","Rubros","itemsModalContentAc","agregarItemsAc","verItemsAc","tablaItjem__paid",["Item","Ítem presupuestario"],"contenedorItemsTablaAc");?>
 
 <?=$componentesPaid->getModalEditargetModal("programaEdita","programaForm","Programa",["input__1"],["Programa"],"editarPrograma");?>

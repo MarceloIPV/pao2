@@ -24,19 +24,11 @@
 
     switch ($identificador) {
 
-
-		case "TablaRubros":
-
+		case "tablaRubros":
 			$query="SELECT nombrePrograma,idPrograma FROM poa_paid_programa;";
-
 			$dataTablets=$objeto->getDatatablets2($query);
-
 			echo json_encode($dataTablets);
-			
 		break;
 
-
-
-        
     }
 
