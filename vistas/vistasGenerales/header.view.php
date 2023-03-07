@@ -134,6 +134,8 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.4/axios.min.js" integrity="sha512-Th6RhKVKcUO1NdowoioG5HrNgi4JzStsjpwheSR+nWcDIVO4Wv6E6D14o/46EqqDsLSca/rcMD1a3OLyPkexAw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		
 
 			<!--==============================================================
