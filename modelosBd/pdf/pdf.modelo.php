@@ -48,7 +48,7 @@
 
 	$subsecretarios=$objeto->getObtenerInformacionGeneral("SELECT CONCAT_WS(' ',nombre,apellido) AS nombreSubses FROM th_usuario WHERE id_usuario='".$director[0][PersonaACargoDirector]."';");
 
-	if ($tipoPdf!="asignacionTecho") {
+	if ($tipoPdf!="asignacionTecho" && $tipoPdf!="asignacion__paid__presupuestarias") {
 
 	$finanCompara=false;
 	$instaCompara=false;
@@ -5856,6 +5856,8 @@ internacional, organizaciones no gubernamentales, entre otros.
 
 			$contador__paid__asignaciones=$objeto->getObtenerInformacionGeneral("SELECT if(count(idPaidInversion) IS NOT NULL,count(idPaidInversion)+1,1) AS contadorDefinitivo FROM poa_paid_asignacion WHERE valor__comparativo='$valorComparativo' AND perioIngreso='$aniosPeriodos__ingesos';");
 
+			$directorPlanificacion=$objeto->getObtenerInformacionGeneral("SELECT CONCAT_WS(' ',REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(a.nombre, 'Ã¡', 'á'),'Ã©','é'),'Ã­','í'),'Ã³','ó'),'Ãº','ú'),'Ã‰','É'),'ÃŒ','Í'),'Ã“','Ó'),'Ãš','Ú'),'Ã±','ñ'),'Ã‘','Ñ'),'&#039;',' ` '),'Ã','Á'),'',' '),'Ã','Á'),'SI','SI'),'â€œ',''),'â€',''),'Á²','ó'),REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(a.apellido, 'Ã¡', 'á'),'Ã©','é'),'Ã­','í'),'Ã³','ó'),'Ãº','ú'),'Ã‰','É'),'ÃŒ','Í'),'Ã“','Ó'),'Ãš','Ú'),'Ã±','ñ'),'Ã‘','Ñ'),'&#039;',' ` '),'Ã','Á'),'',' '),'Ã','Á'),'SI','SI'),'â€œ',''),'â€',''),'Á²','ó')) AS nombreUsuario,c.descripcionFisicamenteEstructura,d.nombre FROM th_usuario AS a INNER JOIN th_usuario_roles AS b ON a.id_usuario=b.id_usuario INNER JOIN th_fisicamenteestructura AS c ON c.id_FisicamenteEstructura=a.fisicamenteEstructura INNER JOIN th_roles AS d ON d.id_rol=b.id_rol WHERE b.id_rol='2' AND a.fisicamenteEstructura='18' AND a.estadoUsuario='A' ORDER BY a.id_usuario DESC LIMIT 1;");			
+
 			/*===================================
 			=            Generar pdf            =
 			===================================*/
@@ -6025,7 +6027,7 @@ internacional, organizaciones no gubernamentales, entre otros.
 							<td style='text-align:justify;'>
 
 
-								La ".$subse__adquiridas.", comunicó la distribución y primera asignación presupuestaria de las organizaciones deportivas ".$anio." para la elaboración y presentación de la Planificación Anual de Inversión Deportiva (PAID).
+								La ".$subse__adquiridas.", comunicó la distribución y primera asignación presupuestaria de las organizaciones deportivas ".$aniosPeriodos__ingesos." para la elaboración y presentación de la Planificación Anual de Inversión Deportiva (PAID).
 
 
 							</td>
@@ -6046,7 +6048,7 @@ internacional, organizaciones no gubernamentales, entre otros.
 							<td style='text-align:justify;'>
 
 
-								Con estos antecedentes, me permito notificar el monto correspondiente a la primera asignación de la Planificación Anual de Inversión Deportiva, para el presente ejercicio fiscal (".$anio."), conforme el modelo de asignación de la ".$subse__adquiridas.", por $ ".number_format($techo__presupuestario,2)." (".$asignadorReal."), sin incluir el valor del cinco por mil.
+								Con estos antecedentes, me permito notificar el monto correspondiente a la primera asignación de la Planificación Anual de Inversión Deportiva, para el presente ejercicio fiscal (".$aniosPeriodos__ingesos."), conforme el modelo de asignación de la ".$subse__adquiridas.", por $ ".number_format($techo__presupuestario,2)." (".$asignadorReal."), sin incluir el valor del cinco por mil.
 
 
 							</td>

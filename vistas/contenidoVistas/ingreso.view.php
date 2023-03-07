@@ -76,7 +76,7 @@
 
 					<div class="input" data-bs-toggle="modal" data-bs-target="#modalRegistros">
 
-						<a>¿Olvido su contraseña?</a>
+						<a  id="olvido__cedenciales__les">¿Olvido su contraseña?</a>
 
 					</div>
 
@@ -89,7 +89,7 @@
 					</div>
 
 					<div class="input" id="contenedorRegistro">
-						<a class="nuevoRegistro" data-bs-toggle="modal" data-bs-target="#modalRegistros">REGISTRARSE</a>
+						<a class="nuevoRegistro" data-bs-toggle="modal" data-bs-target="#modalRegistros" id="registrosNuevos">REGISTRARSE</a>
 
 					</div>
 

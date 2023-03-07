@@ -2,6 +2,200 @@
 
 	class componentesPaid{
 
+		public function getModalIndicadorPaid($parametro1,$parametro2,$parametro3,$parametro4,$parametro5,$parametro6,$parametro7,$parametro8,$parametro9){
+
+			$modal="
+			<div class='modal fade modal__ItemsGrup' id='$parametro1' aria-hidden='true'>
+
+				<div class='modal-dialog modal-lg'>
+
+					<form class='modal-content $parametro2'>
+
+						<div class='modal-header row'>
+
+					        <div class='col' style='z-index: 1;'>
+
+					          <h5 class='modal-title' id='modalTitulo'>$parametro3<br><span class='asignado__titulos'></span></h5>
+
+					        </div>
+
+					        <div class='col col-1' style='z-index: 2;'>
+
+							<button type='button' class='btn-close modales_reload pointer_botones' data-bs-dismiss='modal' aria-label='Close'><i class='far fa-times-circle'></i></button>
+
+					        </div>
+
+						</div>
+
+						<div class='modal-body row'>
+
+							<input type='hidden' class='idOrganismo' name='idOrganismo'/>
+
+							<input type='hidden' class='idAtributoEscondido' name='idAtributoEscondido'/>
+
+						";
+
+
+			foreach ($parametro5 as $clave => $valor) {
+
+				if ($parametro7[$clave]=="input") {
+
+					if ($parametro8[$clave]=="disabled") {
+
+						$modal.="
+
+						<div class='col col-4 titulo__enfasis mt-2'>
+							$parametro5[$clave]
+						</div>
+
+
+						<div class='col col-8 mt-2'>
+							<input type='text' class='$parametro6[$clave] ancho__total__input solo__numero campos__obligatorios text-center' name='$parametro6[$clave]' readonly='readonly' value='0'/>
+						</div>
+
+						";
+
+					
+					}else if ($parametro8[$clave]=="numero") {
+
+						$modal.="
+
+						<div class='col col-4 titulo__enfasis mt-2'>
+							$parametro5[$clave]
+						</div>
+
+
+						<div class='col col-8 mt-2'>
+							<input type='text' class='$parametro6[$clave] ancho__total__input solo__numero campos__obligatorios text-center' name='$parametro6[$clave]' value='0'/>
+						</div>
+
+						";
+
+					}else if($parametro8[$clave]=="monto"){
+
+
+						$modal.="
+
+						<div class='col col-4 titulo__enfasis mt-2'>
+							$parametro5[$clave]
+						</div>
+
+
+						<div class='col col-8 mt-2'>
+							<input type='text' class='$parametro6[$clave] ancho__total__input solo__numero__montos campos__obligatorios text-center' name='$parametro6[$clave]' value='0.00'/>
+						</div>
+
+						";						
+						
+					}else{
+
+						$modal.="
+
+						<div class='col col-4 titulo__enfasis mt-2'>
+							$parametro5[$clave]
+						</div>
+
+
+						<div class='col col-8 mt-2'>
+							<input type='text' class='$parametro6[$clave] ancho__total__input campos__obligatorios text-center' name='$parametro6[$clave]'/>
+						</div>
+
+						";
+
+					}
+		
+
+				}else if($parametro7[$clave]=="boton"){
+
+					$modal.="
+
+						<div class='col col-10 titulo__enfasis mt-2'>
+							$parametro5[$clave]
+						</div>
+
+						<div class='col col-2 mt-2 text-center'>
+							<a data-bs-toggle='modal' data-bs-target='#$parametro6[$clave]' class='btn btn-secondary botonAc$parametro6[$clave]'><i class='fas fa-address-card'></i>&nbsp;&nbsp;Agregar</a>'
+						</div>
+
+						";						
+
+				}else if($parametro7[$clave]=="select"){
+
+					$modal.="
+
+					<div class='col col-12 titulo__enfasis mt-2'>
+						$parametro5[$clave]
+					</div>
+
+					<div class='col col-12 mt-2'>
+						<select class='$parametro6[$clave] ancho__total__input campos__obligatorios' name='$parametro6[$clave]'></select>
+					</div>
+
+					";				
+
+				}else if($parametro7[$clave]=="file"){
+
+
+
+					$modal.="
+
+					<div class='col col-12 titulo__enfasis mt-2'>
+						$parametro5[$clave]
+					</div>
+
+					<div class='col col-12 mt-2'>
+						<input type='file' class='$parametro6[$clave] ancho__total__input campos__obligatorios' name='$parametro6[$clave]' accept='application/pdf'/>
+					</div>
+
+					";				
+
+				}else if ($parametro8[$clave]=="textos") {
+						
+					$modal.="
+
+					<div class='col col-12 titulo__enfasis mt-2 uppercase__texto text-center textos__titulazos'>
+						
+					</div>
+
+					";
+
+
+				}
+
+
+			}
+
+			$modal.="
+					</div>
+
+						<div class='modal-footer d d-flex justify-content-center row'>
+
+							<div class='col col-12 d d-flex justify-content-center flex-wrap'>
+
+								<a type='button' class='btn btn-primary  left__margen boton__enlacesOcultos' id='$parametro4' name='$parametro4'>$parametro9</a>
+
+								&nbsp;&nbsp;&nbsp;&nbsp;
+
+								<a type='button' class='btn btn-danger  left__margen modales__reload pointer__botones' data-dismiss='modal' aria-label='Close' aria-label='Close'>CERRAR</a>
+
+
+							</div>
+
+							<div class='col col-1 reload__Enviosrealizados text-center'></div>
+
+						</div>
+
+					</form>
+
+				</div>
+
+			</div>
+			";
+
+			return $modal;
+
+		} 
+
 
 		public function getModalGeneralPaid($parametro1,$parametro2,$parametro3,$parametro4,$parametro5,$parametro6,$parametro7,$parametro8){
 
@@ -24,6 +218,7 @@
 
 					        <div class='col col-1' style='z-index: 2;'>
 							
+
 								<button type='button' class='btn-close modales__reload pointer__botones' data-bs-dismiss='modal' aria-label='Close'><i class='far fa-times-circle'></i></button>
 							
 							</div>
@@ -42,7 +237,7 @@
 
 								<a class='btn btn-warning pointer__botones' id='$parametro4' name='$parametro4'><i class='fas fa-th-list'></i>&nbsp;&nbsp;Agregar</a>
 
-								<input type='hidden' class='elemento__escondidoI' name='elemento__escondidoI'>
+								<input type='hidden' class='elemento_escondidoI' name='elemento_escondidoI'>
 
 
 							</div>
@@ -50,12 +245,16 @@
 							<div class='col col-6 d d-flex justify-content-center'>
 
 
+
 								<a class='btn btn-info pointer__botones refrezcar__tabla' id='$parametro5' name='$parametro5'><i class='fas fa-eye' style='color: white;'></i>&nbsp;&nbsp;Ver</a>
+
 
 
 							</div>
 
+
 							<div class='$parametro8 overflow_c eliminar__en__etapas__b'>
+
 
 							<table id='$parametro6' class='cell-border' >
 
@@ -64,6 +263,7 @@
 								<thead>
 
 									<tr class='monto__despejarEnvio' style='border: 1px solid white;'>
+
 										<th colspan='5' class='uppercase__texto monto__especial__titulo'>
 										<center>Monto: ".number_format((float)$inversionOrganismo[0][nombreInversion], 2, '.', '')."</center>
 										</th>
@@ -71,6 +271,7 @@
 										<center>Monto por asignar: ".number_format((float)$inversionRestante, 2, '.', '')."</center>
 										</th>
 										<th colspan='6' class='uppercase__texto monto__especial__titulo'>
+
 										<center>Monto asignado: ".number_format((float)$inversionOrganismoQueda[0][sumaItemTotal], 2, '.', '')."</center>
 										</th>
 									</tr>
@@ -126,6 +327,53 @@
 
 										<td>
 										<center style='font-size: 14px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+
+										</center>
+										</td>
+
+										<td>
+										<center style='font-size: 14px;'>
+
 										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
 										</center>
 										</td>
@@ -150,49 +398,16 @@
 
 										<td>
 										<center style='font-size: 14px;'>
+
 										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
 										</center>
 										</td>
 
 										<td>
 										<center style='font-size: 14px;'>
-										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
-										</center>
-										</td>
 
-										<td>
-										<center style='font-size: 14px;'>
 										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
-										</center>
-										</td>
 
-										<td>
-										<center style='font-size: 14px;'>
-										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
-										</center>
-										</td>
-
-										<td>
-										<center style='font-size: 14px;'>
-										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
-										</center>
-										</td>
-
-										<td>
-										<center style='font-size: 14px;'>
-										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
-										</center>
-										</td>
-
-										<td>
-										<center style='font-size: 14px;'>
-										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
-										</center>
-										</td>
-
-										<td>
-										<center style='font-size: 14px;'>
-										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
 										</center>
 										</td>
 
@@ -231,7 +446,6 @@
 
 
 		}
-
 
 
 
