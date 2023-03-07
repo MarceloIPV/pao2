@@ -272,7 +272,7 @@
 
 		</li>
 
-		<li class="nav-item">
+<!-- 		<li class="nav-item">
 
 			<a href="paidAsignado" class="nav-link <?= $objetoInformacion->getUrlDinamica('poa2/',$_SERVER['REQUEST_URI'],'paidAsignado');?>">
 
@@ -280,7 +280,7 @@
 
 			</a>
 
-		</li>
+		</li> -->
 
 		<li class="nav-item">
 

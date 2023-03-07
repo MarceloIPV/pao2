@@ -360,11 +360,11 @@ $(document).ready(function () {
 
 					if (parametro3=="exel__poas__items__ver") {
 
-						$(parametro2).append('<div style="overflow: scroll!important; width:100%;"><table class="tabla__especificas" style="width:100%!important;"><thead><tr><th>Primer trimestre</th><th>Segundo trimestre</th><th>Tercer trimestre</th><th>Cuarto trimestre</th><th>Meta indicador</th></tr></thead><tbody class="cuerpo__tablas"></tbody></table></div>');
+						$(parametro2).append('<div style="overflow: scroll!important; width:100%;"><table class="tabla__especificas" style="width:100%!important;"><thead><tr><th>Actividad</th><th>Primer trimestre</th><th>Segundo trimestre</th><th>Tercer trimestre</th><th>Cuarto trimestre</th><th>Meta indicador</th></tr></thead><tbody class="cuerpo__tablas"></tbody></table></div>');
 
 						for (z of indicadorInformacion) {
 
-							$(".cuerpo__tablas").append('<tr class="fila__'+z.idPoaEnviado+'"><td>'+z.primertrimestre+'</td><td>'+z.segundotrimestre+'</td><td>'+z.tercertrimestre+'</td><td>'+z.cuartotrimestre+'</td><td>'+z.metaindicador+'</td>/tr>');
+							$(".cuerpo__tablas").append('<tr class="fila__'+z.idPoaEnviado+'"><td>'+z.actividad+'</td><td>'+z.primertrimestre+'</td><td>'+z.segundotrimestre+'</td><td>'+z.tercertrimestre+'</td><td>'+z.cuartotrimestre+'</td><td>'+z.metaindicador+'</td>/tr>');
 
 						}
 

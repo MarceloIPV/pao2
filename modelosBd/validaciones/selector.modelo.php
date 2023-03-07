@@ -2446,7 +2446,42 @@
 
 				return $listas; 
 
+			}else if($indicador==1006){
+
+				$query="SELECT idRubros,REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(nombreRubros, 'Ã¡', 'á'),'Ã©','é'),'Ã­','í'),'Ã³','ó'),'Ãº','ú'),'Ã‰','É'),'ÃŒ','Í'),'Ã“','Ó'),'Ãš','Ú'),'Ã±','ñ'),'Ã‘','Ñ'),'&#039;',' ` '),'Ã','Á'),'',' '),'Ã','Á'),'SI','SI'),'â€œ',''),'â€',''),'Á²','ó') AS nombreRubros FROM poa_paid_rubros WHERE identificador='$evaluador';";
+				$resultado = $conexionEstablecida->query($query);
+
+				$listas="";
+
+				while($registro = $resultado->fetch()) {
+
+					$listas.="<option value='".$registro["idRubros"]."'>".$registro["nombreRubros"]."</option>";
+				
+
+				}
+
+				return $listas; 
+
+
+			}else if($indicador==1007){
+
+				$query="SELECT idRubros,REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(nombreRubros, 'Ã¡', 'á'),'Ã©','é'),'Ã­','í'),'Ã³','ó'),'Ãº','ú'),'Ã‰','É'),'ÃŒ','Í'),'Ã“','Ó'),'Ãš','Ú'),'Ã±','ñ'),'Ã‘','Ñ'),'&#039;',' ` '),'Ã','Á'),'',' '),'Ã','Á'),'SI','SI'),'â€œ',''),'â€',''),'Á²','ó') AS nombreRubros FROM poa_paid_rubros WHERE identificador='$evaluador';";
+				$resultado = $conexionEstablecida->query($query);
+
+				$listas="<option value='0' class='text-center'>--Seleccione un rubro--</option>";
+
+				while($registro = $resultado->fetch()) {
+
+					$listas.="<option value='".$registro["idRubros"]."'>".$registro["nombreRubros"]."</option>";
+				
+
+				}
+
+				return $listas; 
+
+
 			}
+
 
 
 		}
