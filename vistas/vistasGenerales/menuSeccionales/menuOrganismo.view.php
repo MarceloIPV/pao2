@@ -428,7 +428,7 @@
 
 <?php if ($estadoPAID[0][existe] > 0): ?>
 
-<li class="nav-item <?=$objetoInformacion->getUrlDinamicaUna('poa2/',$_SERVER['REQUEST_URI'],array("planificacion","ventanaObservaciones","reporteriaOrganismos"));?>">
+<li class="nav-item <?=$objetoInformacion->getUrlDinamicaUna('poa2/',$_SERVER['REQUEST_URI'],array("planificacion","ventanaObservaciones","reporteriaOrganismos",'generalDeporteEA','paidRubrosEncuentroActivo' ,'generalDeporteAR','paidRubrosEventos','paidRubrosInterdisciplinario','paidRubrosNecesidadesIndividuales','paidRubrosNecesidadesGenerales'));?>">
 
 	<a href="#" class="nav-link">
 		<p>
@@ -444,7 +444,7 @@
 			
 		<li class="nav-item">
 
-			<li class="nav-item <?=$objetoInformacion->getUrlDinamicaUna('poa2/',$_SERVER['REQUEST_URI'],array("planificacion","ventanaObservaciones","reporteriaOrganismos"));?>">
+			<li class="nav-item <?=$objetoInformacion->getUrlDinamicaUna('poa2/',$_SERVER['REQUEST_URI'],array("planificacion","ventanaObservaciones","reporteriaOrganismos",'generalDeporteAR','paidRubrosEventos','paidRubrosInterdisciplinario','paidRubrosNecesidadesIndividuales','paidRubrosNecesidadesGenerales'));?>">
 
 				<a href="#" class="nav-link">
 					<p>
@@ -521,7 +521,7 @@
 
 		<li class="nav-item">
 
-			<li class="nav-item <?=$objetoInformacion->getUrlDinamicaUna('poa2/',$_SERVER['REQUEST_URI'],array("planificacion","ventanaObservaciones","reporteriaOrganismos"));?>">
+			<li class="nav-item <?=$objetoInformacion->getUrlDinamicaUna('poa2/',$_SERVER['REQUEST_URI'],array("planificacion","ventanaObservaciones","reporteriaOrganismos",'generalDeporteEA','paidRubrosEncuentroActivo'));?>">
 
 				<a href="#" class="nav-link">
 					<p>Encuentro activo del deporte para el desarrollo
