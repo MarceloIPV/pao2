@@ -219,7 +219,9 @@
 					        <div class='col col-1' style='z-index: 2;'>
 							
 
+
 								<button type='button' class='btn-close pointer__botones' data-bs-dismiss='modal' aria-label='Close'><i class='far fa-times-circle'></i></button>
+
 							
 							</div>
 
