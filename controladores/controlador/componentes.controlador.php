@@ -4499,7 +4499,7 @@
 
 					</thead>
 
-					<tbody >
+					<tbody class'body__paid'>
 					
 					$parametro3
 
