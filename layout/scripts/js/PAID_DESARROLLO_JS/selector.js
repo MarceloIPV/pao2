@@ -7,15 +7,20 @@ var TablaPrincipal = function (tipo, body, identificador) {
 
     axios({
         method: "post",
-        url: "modelosBd/PAID_DESARROLLO/selector.md.php",
+        url: "modelosBd/paid-alto-rendimiento-modelos/selector.md.php",
         data: paqueteDeDatos,
         headers: { "Content-Type": "multipart/form-data" },
     }).then((response) => {
-      
-        })
-        .catch((error) => {
+
+        for(x of response.data.informacion){
+            alert(x.nombreComponentes);
+        }
+
         
-        });
+    }).catch((error) => {
+        
+    });
+
 
 
 };
