@@ -22,7 +22,7 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 
 <div class="content-wrapper d d-flex flex-column align-items-center">
 	
-		<?=$componentes->getContenidoActividadesPAID("tablaPAIDGeneral","
+		<?=$componentes->getContenidoActividadesPAID("tablaPAIDGeneral1","
 
 		<tr>
 			<th colspan='5' class='uppercase__texto monto__especial__titulo'>
