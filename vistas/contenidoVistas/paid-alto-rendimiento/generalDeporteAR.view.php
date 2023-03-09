@@ -63,7 +63,7 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 		
 		<tr>
 			<td class='uppercase__texto' >
-			<center style='font-size: 14px;'>1</center>
+			<center style='width:20%!important;'>1</center>
 			</td>
 			<td>
 			<center style='font-size: 14px;'>Viajes</center>
@@ -89,8 +89,7 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 </div>
 <?=$componentesPaid->getModalGeneralRubroPaid("itemsCargados1","Rubros","itemsModalContentAc","<center style='font-size: 14px;'> <a data-dismiss='modal' class='btn btn-success'  data-bs-toggle='modal' data-bs-target='#itemsCargados' >ver</a></center>");?>
 
-
-<?=$componentesPaid->getModalGeneralPaid("itemsCargados","Rubros","itemsModalContentAc","agregarItemsAc","verItemsAc","tablaItjem__paid",["Item","Ítem presupuestario"],"contenedorItemsTablaAc");?>
+<?=$componentesPaid->getModalGeneralPaid("itemsCargados","RubrosDavid","itemsModalContentAc","agregarItemsAc","verItemsAc","tablaItjem__paid",["Item","Ítem presupuestario"],"contenedorItemsTablaAc");?>
 <?=$componentesPaid->getModalIndicadorPaid("modalActividad".$valor2,"formModalActividades".$valor2,"PLANIFICACIÓN DE INDICADORES", "insertar".$informacionSeleccionada[$clave]['idActividades'] , ["PLANIFICACIÓN DE INDICADORES","I Trimestre","II Trimestre","III Trimestre","IV Trimestre","Meta Anual del indicador"] , ["planificacionIndicadores","primerTrimestre".$valor2,"segundoTrimestre".$valor2,"tercerTrimestre".$valor2,"cuartoTrimestre".$valor2,"metaAnualIndicador".$valor2,"botonItems".$valor2] , ["textos","input","input","input","input","input","boton"],["textos","numero","numero","numero","numero","disabled","boton"],"<i class='fas fa-save'></i>&nbsp;&nbsp;GUARDAR");?>
 
 
