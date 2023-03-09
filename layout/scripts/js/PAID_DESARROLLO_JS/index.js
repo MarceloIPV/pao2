@@ -29,8 +29,12 @@ $(document).ready(function () {
         
     });
 
-    $.getScript("layout/scripts/js/PAID_DESARROLLO_JS/selector.js",function(){
-        TablaPrincipal("pid_general",$('body__paid'),$('#identificador').val())
+   $.getScript("layout/scripts/js/PAID_DESARROLLO_JS/selector.js",function(){
+        
+        tablaPrincipal("paid_general",$(".body__paid"),$("#ïdentificador").val());
+        
     });
+
+  
     
 });
