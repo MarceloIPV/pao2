@@ -233,6 +233,7 @@
 		<script type="text/javascript" src="layout/scripts/js/remanentes/remanentes.js?v=1.0.2"></script>
 
 		<script type="text/javascript" src="layout/scripts/js/PAID_DESARROLLO_JS/index.js"></script>
+		<script type="text/javascript" src="layout/scripts/js/paid-alto-rendimiento-desarrollo/index.js"></script>
 
 			
 		<!--====  End of Scripts personalizados  ====-->
