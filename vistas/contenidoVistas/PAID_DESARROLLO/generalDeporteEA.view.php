@@ -17,21 +17,21 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 
 <?php $idOrganismoSession=$informacionObjeto[0][idOrganismo];?>
 
-
+<input type="hidden" id="identificador" name="identificador" value="0">
 
 
 <div class="content-wrapper d d-flex flex-column align-items-center">
 	
-		<?=$componentes->getContenidoActividadesPAID("tablaPAIDGeneral","
+		<?=$componentes->getContenidoActividadesPAID("tablaPAIDGeneral1","
 
 		<tr>
-			<th colspan='6' class='uppercase__texto monto__especial__titulo'>
+			<th colspan='5' class='uppercase__texto monto__especial__titulo'>
 			<center>Monto: ".number_format((float)$inversionOrganismo[0][nombreInversion], 2, '.', '')."</center>
 			</th>
 		</tr>
 
 		<tr class='monto__despejarEnvio'>
-			<th colspan='3' class='uppercase__texto'>
+			<th colspan='2' class='uppercase__texto'>
 			<center>Monto por asignar: ".number_format((float)$inversionRestante, 2, '.', '')."</center>
 			</th>
 			<th colspan='3' class='uppercase__texto'>
@@ -57,9 +57,6 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 			<th style='width:15%!important;'>
 			<center>Rubros</center>
 			</th>
-			<th style='width:10%!important;'>
-			<center>Items</center>
-			</th>
 		</tr> "
 		
 		,"
@@ -80,10 +77,7 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 			<center style='font-size: 14px;'><button type'button' class='btn btn-success'style='width=200px;'  data-bs-toggle='modal' data-bs-target='#modalActividad'> Ver </button></center>
 			</td>
 			<td>
-			<center style='font-size: 14px;'>Compras</center>
-			</td>
-			<td>
-			<center style='font-size: 14px;'><button type'button' class='btn btn-success'style='width=200px;'  data-bs-toggle='modal' data-bs-target='#itemsCargados'> Ver </button></center>
+			<center style='font-size: 14px;'><button type'button' class='btn btn-success'style='width=200px;'  data-bs-toggle='modal' data-bs-target='#itemsCargados1'> Ver </button></center>
 			</td>
 		</tr>
 
@@ -97,6 +91,12 @@ $aniosPeriodos__ingesos=$_SESSION["selectorAniosA"];
 
 <?=$componentesPaid->getModalIndicadorPaid("modalActividad".$valor2,"formModalActividades".$valor2,"PLANIFICACIÓN DE INDICADORES", "insertar".$informacionSeleccionada[$clave]['idActividades'] , ["PLANIFICACIÓN DE INDICADORES","I Trimestre","II Trimestre","III Trimestre","IV Trimestre","Meta Anual del indicador"] , ["planificacionIndicadores","primerTrimestre".$valor2,"segundoTrimestre".$valor2,"tercerTrimestre".$valor2,"cuartoTrimestre".$valor2,"metaAnualIndicador".$valor2,"botonItems".$valor2] , ["textos","input","input","input","input","input","boton"],["textos","numero","numero","numero","numero","disabled","boton"],"<i class='fas fa-save'></i>&nbsp;&nbsp;GUARDAR");?>
 
+
+<?=$componentesPaid->getModalGeneralRubroPaid("itemsCargados1","Rubros","itemsModalContentAc","<center style='font-size: 14px;'> <a data-dismiss='modal' class='btn btn-success' data-bs-toggle='modal' data-bs-target='#itemsCargados'>Ver</a></center>");?>
+
+
 <?=$componentesPaid->getModalGeneralPaid("itemsCargados","Rubros","itemsModalContentAc","agregarItemsAc","verItemsAc","tablaItjem__paid",["Item","Ítem presupuestario"],"contenedorItemsTablaAc");?>
 
-<?=$componentesPaid->getModalEditargetModal("programaEdita","programaForm","Programa",["input__1"],["Programa"],"editarPrograma");?>
+<script>
+	
+</script>

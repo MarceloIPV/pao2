@@ -10,8 +10,6 @@ $(document).ready(function () {
 
     $.getScript("layout/scripts/js/PAID_DESARROLLO_JS/datatablets.js",function(){
         
-        datatablets($("#organismosRegistrados_i"),"organismosRegistrados_i",false,false,false,false,false,false,false);
-        
     });
 
 
@@ -31,6 +29,12 @@ $(document).ready(function () {
         
     });
 
+   $.getScript("layout/scripts/js/PAID_DESARROLLO_JS/selector.js",function(){
+        
+        tablaPrincipal("paid_general",$(".body__paid"),$("#ïdentificador").val());
+        
+    });
 
+  
     
 });

@@ -25,7 +25,7 @@
 
 		<div class="row">
 
-			<input type="hidden" id="valorComparativo" name="valorComparativo" value="0">
+			<input type="hidden" id="valorComparativo" name="valorComparativo" value="1">
 
 			<input type="hidden" id="texto__documentos" name="texto__documentos">
 

@@ -198,13 +198,133 @@
 		} 
 
 
+		public function getModalGeneralRubroPaid($parametro1,$parametro2,$parametro3,$parametro4){
+
+			$modal= "
+			
+			<div class='modal fade modal__1' id='$parametro1' aria-hidden='true' data-backdrop='static' data-keyboard='false' tabindex='-1'>
+			
+			<div class='modal-dialog modal-xl'>
+			
+			<form class='modal-content formularioConfiguracion'>
+
+						<div class='modal-header row'>
+
+					        <div class='col' style='z-index: 1;'>
+
+					        	<h5 class='modal-title titulo__modalItems' id='exampleModalLabel'>$parametro2</h5>
+
+					        </div>
+
+					        <div class='col col-1' style='z-index: 2;'>
+							
+
+
+								<button type='button' class='btn-close pointer__botones' data-bs-dismiss='modal' aria-label='Close'><i class='far fa-times-circle'></i></button>
+
+							
+							</div>
+
+						</div>
+							
+
+						<div class='modal-body row $parametro3'>
+
+							<table class='cell-border' >
+
+								<thead>
+
+									
+									<tr>
+
+										<th>
+										<center>Cod. Rubro</center>
+										</th>
+
+										<th style='width:15%!important;'>
+										<center>Rubro</center>
+										</th>
+
+										<th style='width:15%!important;'>
+										<center>Monto</center>
+										</th>
+
+										<th style='width:15%!important;'>
+										<center>Valor Asignado</center>
+										</th>
+
+										<th style='width:15%!important;'>
+										<center>Valor por Asignar</center>
+										</th>
+
+										<th style='width:15%!important;'>
+										<center>Items</center>
+										</th>
+
+										
+									
+									</tr> 
+			
+								</thead>
+			
+								<tbody >
+								
+									<tr>
+										<td class='uppercase__texto' >
+										<center style='font-size: 14px;'>1</center>
+										</td>
+										<td>
+										<center style='font-size: 14px;'>Viajes</center>
+										</td>
+										<td>
+										<center style='font-size: 14px;'>Viajes</center>
+										</td>
+										<td>
+										<center style='font-size: 14px;'>Viajes</center>
+										</td>
+										<td>
+										<center style='font-size: 14px;'>Viajes</center>
+										</td>
+										<td>
+
+										$parametro4
+										
+										</td>
+
+
+									</tr>
+								
+			
+								</tbody>
+								
+
+							</table>
+
+						
+
+						</div>
+
+					</form>
+
+				</div>
+
+			</div>";
+
+			return $modal;
+
+			
+
+
+		}
+
+
 		public function getModalGeneralPaid($parametro1,$parametro2,$parametro3,$parametro4,$parametro5,$parametro6,$parametro7,$parametro8){
 
 			$modal= "
 			
 			<div class='modal fade modal__1' id='$parametro1' aria-hidden='true' data-backdrop='static' data-keyboard='false' tabindex='-1'>";
 
-			$modal.="<div class='modal-dialog modal-xl'>";
+			$modal.="<div class='modal-dialog modal-lg'>";
 
 			
 			$modal.="	<form class='modal-content formularioConfiguracion'>
@@ -220,7 +340,7 @@
 					        <div class='col col-1' style='z-index: 2;'>
 							
 
-								<button type='button' class='btn-close modales__reload pointer__botones' data-bs-dismiss='modal' aria-label='Close'><i class='far fa-times-circle'></i></button>
+								<button type='button' class='btn-close pointer__botones' data-bs-dismiss='modal' aria-label='Close'><i class='far fa-times-circle'></i></button>
 							
 							</div>
 
@@ -262,26 +382,8 @@
 							
 
 								<thead>
-
-									<tr class='monto__despejarEnvio' style='border: 1px solid white;'>
-
-										<th colspan='5' class='uppercase__texto monto__especial__titulo'>
-										<center>Monto: ".number_format((float)$inversionOrganismo[0][nombreInversion], 2, '.', '')."</center>
-										</th>
-										<th colspan='5' class='uppercase__texto monto__especial__titulo'>
-										<center>Monto por asignar: ".number_format((float)$inversionRestante, 2, '.', '')."</center>
-										</th>
-										<th colspan='6' class='uppercase__texto monto__especial__titulo'>
-
-										<center>Monto asignado: ".number_format((float)$inversionOrganismoQueda[0][sumaItemTotal], 2, '.', '')."</center>
-										</th>
-									</tr>
-									
-									
 									<tr>";
-
-
-									
+										
 				$modal.= "
 
 										<th>
@@ -329,7 +431,7 @@
 										<td>
 										<center style='font-size: 14px;'>
 
-										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225 solo__numero__montos' value='0'  style='width:40px;'>
 
 										</center>
 										</td>
