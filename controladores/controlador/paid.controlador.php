@@ -219,7 +219,9 @@
 					        <div class='col col-1' style='z-index: 2;'>
 							
 
-								<button type='button' class='btn-close modales__reload pointer__botones' data-bs-dismiss='modal' aria-label='Close'><i class='far fa-times-circle'></i></button>
+
+								<button type='button' class='btn-close pointer__botones' data-bs-dismiss='modal' aria-label='Close'><i class='far fa-times-circle'></i></button>
+
 							
 							</div>
 
@@ -338,7 +340,7 @@
 					        <div class='col col-1' style='z-index: 2;'>
 							
 
-								<button type='button' class='btn-close modales__reload pointer__botones' data-bs-dismiss='modal' aria-label='Close'><i class='far fa-times-circle'></i></button>
+								<button type='button' class='btn-close pointer__botones' data-bs-dismiss='modal' aria-label='Close'><i class='far fa-times-circle'></i></button>
 							
 							</div>
 
@@ -429,7 +431,7 @@
 										<td>
 										<center style='font-size: 14px;'>
 
-										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225' value='0'  style='width:40px;'>
+										<input type='text' class='enero37225 meses__atados37225  meses__atadosAjax37225 solo__numero__montos' value='0'  style='width:40px;'>
 
 										</center>
 										</td>
